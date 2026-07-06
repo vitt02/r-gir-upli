@@ -33,7 +33,13 @@ header{
   text-decoration:none;
   color:#fff;
 }
-.logo span.icon{font-size:1.8rem;}
+.logo-img{
+  height:48px;
+  width:auto;
+  border-radius:8px;
+  background:#fff;
+  padding:2px;
+}
 nav ul{
   list-style:none;
   display:flex;
@@ -218,6 +224,42 @@ footer .copyright{
   padding-top:1rem;
   border-top:1px solid #4a453d;
   font-size:.8rem;
+}
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:1.2rem;
+}
+.gallery img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:var(--radius);
+  box-shadow:0 2px 10px rgba(0,0,0,.06);
+  cursor:pointer;
+  transition:transform .15s;
+  display:block;
+}
+.gallery img:hover{transform:scale(1.03);}
+.lightbox-content{
+  max-width:90vw;
+  max-height:90vh;
+  position:relative;
+}
+.lightbox-content img{
+  max-width:100%;
+  max-height:85vh;
+  border-radius:12px;
+  display:block;
+}
+.lightbox-content .modal-close{
+  background:#fff;
+  border-radius:50%;
+  width:2.2rem;
+  height:2.2rem;
+  top:-.9rem;
+  right:-.9rem;
+  box-shadow:0 2px 8px rgba(0,0,0,.35);
 }
 /* Elternbereich Modal */
 .modal-overlay{

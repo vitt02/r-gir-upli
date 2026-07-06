@@ -11,14 +11,21 @@ function setLang(lang){
 function openModal(){ document.getElementById('modal').classList.add('open'); }
 function closeModal(){ document.getElementById('modal').classList.remove('open'); }
 
+function openLightbox(src, alt){
+  var img = document.getElementById('lightbox-img');
+  img.src = src;
+  img.alt = alt || '';
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLightbox(){ document.getElementById('lightbox').classList.remove('open'); }
+
 document.addEventListener('DOMContentLoaded', function(){
   var saved = localStorage.getItem('raegiraeupli-lang');
   if(saved) setLang(saved);
 
-  var modal = document.getElementById('modal');
-  if(modal){
-    modal.addEventListener('click', function(e){
-      if(e.target === this) closeModal();
+  document.querySelectorAll('.modal-overlay').forEach(function(overlay){
+    overlay.addEventListener('click', function(e){
+      if(e.target === this) overlay.classList.remove('open');
     });
-  }
+  });
 });
