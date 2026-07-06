@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kinderkrippe Rägiräupli</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo"><span class="icon">🐛</span> <span data-lang="de">Kinderkrippe Rägiräupli</span><span data-lang="fr">Crèche Rägiräupli</span></a>
+  <nav>
+    <ul>
+      <li><a href="konzept.html" data-lang="de">Konzept</a><a href="konzept.html" data-lang="fr">Concept</a></li>
+      <li><a href="team.html" data-lang="de">Team</a><a href="team.html" data-lang="fr">Équipe</a></li>
+      <li><a href="tarife.html" data-lang="de">Öffnungszeiten &amp; Tarife</a><a href="tarife.html" data-lang="fr">Horaires &amp; Tarifs</a></li>
+      <li><a href="anmeldung.html" data-lang="de">Anmeldung</a><a href="anmeldung.html" data-lang="fr">Inscription</a></li>
+      <li><a href="kontakt.html" data-lang="de">Kontakt</a><a href="kontakt.html" data-lang="fr">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="header-actions">
+    <div class="lang-switch">
+      <button id="btn-de" class="active" onclick="setLang('de')">DE</button>
+      <button id="btn-fr" onclick="setLang('fr')">FR</button>
+    </div>
+    <button class="btn-eltern" onclick="openModal()">
+      <span data-lang="de">Elternbereich</span><span data-lang="fr">Espace parents</span>
+    </button>
+  </div>
+</header>
+
+<div class="hero">
+  <h1><span data-lang="de">Willkommen in der Rägiräupli</span><span data-lang="fr">Bienvenue à la Rägiräupli</span></h1>
+  <p>
+    <span data-lang="de">Ein liebevoller Ort zum Wachsen, Spielen und Entdecken – für Kinder von 3 Monaten bis zum Kindergarteneintritt.</span>
+    <span data-lang="fr">Un lieu chaleureux pour grandir, jouer et découvrir – pour les enfants de 3 mois jusqu'à l'entrée à l'école enfantine.</span>
+  </p>
+</div>
+
+<main>
+  <section>
+    <h2><span data-lang="de">Auf einen Blick</span><span data-lang="fr">En un coup d'œil</span></h2>
+    <div class="teasers">
+      <a class="teaser" href="konzept.html">
+        <h3 data-lang="de">Konzept</h3><h3 data-lang="fr">Concept</h3>
+        <p data-lang="de">Unsere Pädagogik, Gruppen und Ernährung.</p>
+        <p data-lang="fr">Notre pédagogie, nos groupes et l'alimentation.</p>
+      </a>
+      <a class="teaser" href="team.html">
+        <h3 data-lang="de">Team</h3><h3 data-lang="fr">Équipe</h3>
+        <p data-lang="de">Wer sich um Ihr Kind kümmert.</p>
+        <p data-lang="fr">Qui s'occupe de votre enfant.</p>
+      </a>
+      <a class="teaser" href="tarife.html">
+        <h3 data-lang="de">Öffnungszeiten &amp; Tarife</h3><h3 data-lang="fr">Horaires &amp; Tarifs</h3>
+        <p data-lang="de">Betreuungszeiten und Preise im Überblick.</p>
+        <p data-lang="fr">Horaires de garde et tarifs en un coup d'œil.</p>
+      </a>
+      <a class="teaser" href="anmeldung.html">
+        <h3 data-lang="de">Anmeldung</h3><h3 data-lang="fr">Inscription</h3>
+        <p data-lang="de">Platz anfragen oder auf die Warteliste.</p>
+        <p data-lang="fr">Demander une place ou s'inscrire en liste d'attente.</p>
+      </a>
+      <a class="teaser" href="kontakt.html">
+        <h3 data-lang="de">Kontakt &amp; Anfahrt</h3><h3 data-lang="fr">Contact &amp; Accès</h3>
+        <p data-lang="de">Adresse, Telefon und Anfahrtsweg.</p>
+        <p data-lang="fr">Adresse, téléphone et accès.</p>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h3 data-lang="de">Kinderkrippe Rägiräupli</h3><h3 data-lang="fr">Crèche Rägiräupli</h3>
+      <p data-lang="de">Musterstrasse 12, 8000 Zürich</p>
+      <p data-lang="fr">Rue Exemple 12, 8000 Zurich</p>
+    </div>
+    <div>
+      <h3 data-lang="de">Rechtliches</h3><h3 data-lang="fr">Mentions légales</h3>
+      <p><a href="impressum.html" data-lang="de">Impressum</a><a href="impressum.html" data-lang="fr">Mentions légales</a></p>
+      <p><a href="datenschutz.html" data-lang="de">Datenschutzerklärung</a><a href="datenschutz.html" data-lang="fr">Déclaration de confidentialité</a></p>
+    </div>
+    <div>
+      <h3 data-lang="de">Kontakt</h3><h3 data-lang="fr">Contact</h3>
+      <p data-lang="de">Telefon: 044 123 45 67<br>info@raegiraeupli.ch</p>
+      <p data-lang="fr">Téléphone: 044 123 45 67<br>info@raegiraeupli.ch</p>
+    </div>
+  </div>
+  <div class="copyright">© 2026 Kinderkrippe Rägiräupli · <span data-lang="de">Alle Rechte vorbehalten</span><span data-lang="fr">Tous droits réservés</span></div>
+</footer>
+
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <h2><span data-lang="de">Elternbereich</span><span data-lang="fr">Espace parents</span><span class="badge-demo">DEMO</span></h2>
+    <form onsubmit="event.preventDefault(); alert('Demo-Login – im echten System folgt hier ein gesicherter Bereich mit Fotos und Dokumenten.');" style="box-shadow:none;padding:0;margin-top:1rem;">
+      <div>
+        <label>E-Mail</label>
+        <input type="email" required>
+      </div>
+      <div>
+        <label data-lang="de">Passwort</label><label data-lang="fr">Mot de passe</label>
+        <input type="password" required>
+      </div>
+      <button type="submit"><span data-lang="de">Anmelden</span><span data-lang="fr">Connexion</span></button>
+    </form>
+    <div class="modal-note">
+      <span data-lang="de">Hinweis: Dies ist ein reines Layout-Muster. Der echte Elternbereich benötigt ein Backend mit sicherem Login, verschlüsselter Dateiablage und Zugriff nur nach schriftlicher Foto-Einwilligung.</span>
+      <span data-lang="fr">Remarque : ceci est une maquette. L'espace parents réel nécessite un backend avec connexion sécurisée, stockage chiffré et accès uniquement après consentement écrit pour les photos.</span>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

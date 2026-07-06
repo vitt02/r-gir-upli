@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Öffnungszeiten &amp; Tarife - Kinderkrippe Rägiräupli</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo"><span class="icon">🐛</span> <span data-lang="de">Kinderkrippe Rägiräupli</span><span data-lang="fr">Crèche Rägiräupli</span></a>
+  <nav>
+    <ul>
+      <li><a href="konzept.html" data-lang="de">Konzept</a><a href="konzept.html" data-lang="fr">Concept</a></li>
+      <li><a href="team.html" data-lang="de">Team</a><a href="team.html" data-lang="fr">Équipe</a></li>
+      <li><a href="tarife.html" class="current" data-lang="de">Öffnungszeiten &amp; Tarife</a><a href="tarife.html" class="current" data-lang="fr">Horaires &amp; Tarifs</a></li>
+      <li><a href="anmeldung.html" data-lang="de">Anmeldung</a><a href="anmeldung.html" data-lang="fr">Inscription</a></li>
+      <li><a href="kontakt.html" data-lang="de">Kontakt</a><a href="kontakt.html" data-lang="fr">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="header-actions">
+    <div class="lang-switch">
+      <button id="btn-de" class="active" onclick="setLang('de')">DE</button>
+      <button id="btn-fr" onclick="setLang('fr')">FR</button>
+    </div>
+    <button class="btn-eltern" onclick="openModal()">
+      <span data-lang="de">Elternbereich</span><span data-lang="fr">Espace parents</span>
+    </button>
+  </div>
+</header>
+
+<div class="page-header">
+  <h1><span data-lang="de">Öffnungszeiten &amp; Tarife</span><span data-lang="fr">Horaires &amp; Tarifs</span></h1>
+</div>
+
+<main>
+  <section>
+    <p style="margin-bottom:1rem;">
+      <span data-lang="de">Montag – Freitag, 07:00 – 18:30 Uhr (ausser an Feiertagen)</span>
+      <span data-lang="fr">Lundi – vendredi, 07h00 – 18h30 (sauf jours fériés)</span>
+    </p>
+    <table class="tarife">
+      <thead>
+        <tr>
+          <th data-lang="de">Betreuungstag</th><th data-lang="fr">Jour de garde</th>
+          <th data-lang="de">Vollzeit</th><th data-lang="fr">Journée complète</th>
+          <th data-lang="de">Halbtag</th><th data-lang="fr">Demi-journée</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td data-lang="de">Preis pro Tag</td><td data-lang="fr">Prix par jour</td><td>CHF 120.–</td><td>CHF 120.–</td><td>CHF 70.–</td><td>CHF 70.–</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:.85rem;color:#777;margin-top:.6rem;">
+      <span data-lang="de">Subventionierte Plätze der Gemeinde auf Anfrage. Genaue Tarife gemäss aktuellem Elternbeitragsreglement.</span>
+      <span data-lang="fr">Places subventionnées par la commune sur demande. Tarifs exacts selon le règlement en vigueur.</span>
+    </p>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h3 data-lang="de">Kinderkrippe Rägiräupli</h3><h3 data-lang="fr">Crèche Rägiräupli</h3>
+      <p data-lang="de">Musterstrasse 12, 8000 Zürich</p>
+      <p data-lang="fr">Rue Exemple 12, 8000 Zurich</p>
+    </div>
+    <div>
+      <h3 data-lang="de">Rechtliches</h3><h3 data-lang="fr">Mentions légales</h3>
+      <p><a href="impressum.html" data-lang="de">Impressum</a><a href="impressum.html" data-lang="fr">Mentions légales</a></p>
+      <p><a href="datenschutz.html" data-lang="de">Datenschutzerklärung</a><a href="datenschutz.html" data-lang="fr">Déclaration de confidentialité</a></p>
+    </div>
+    <div>
+      <h3 data-lang="de">Kontakt</h3><h3 data-lang="fr">Contact</h3>
+      <p data-lang="de">Telefon: 044 123 45 67<br>info@raegiraeupli.ch</p>
+      <p data-lang="fr">Téléphone: 044 123 45 67<br>info@raegiraeupli.ch</p>
+    </div>
+  </div>
+  <div class="copyright">© 2026 Kinderkrippe Rägiräupli · <span data-lang="de">Alle Rechte vorbehalten</span><span data-lang="fr">Tous droits réservés</span></div>
+</footer>
+
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <h2><span data-lang="de">Elternbereich</span><span data-lang="fr">Espace parents</span><span class="badge-demo">DEMO</span></h2>
+    <form onsubmit="event.preventDefault(); alert('Demo-Login – im echten System folgt hier ein gesicherter Bereich mit Fotos und Dokumenten.');" style="box-shadow:none;padding:0;margin-top:1rem;">
+      <div>
+        <label>E-Mail</label>
+        <input type="email" required>
+      </div>
+      <div>
+        <label data-lang="de">Passwort</label><label data-lang="fr">Mot de passe</label>
+        <input type="password" required>
+      </div>
+      <button type="submit"><span data-lang="de">Anmelden</span><span data-lang="fr">Connexion</span></button>
+    </form>
+    <div class="modal-note">
+      <span data-lang="de">Hinweis: Dies ist ein reines Layout-Muster. Der echte Elternbereich benötigt ein Backend mit sicherem Login, verschlüsselter Dateiablage und Zugriff nur nach schriftlicher Foto-Einwilligung.</span>
+      <span data-lang="fr">Remarque : ceci est une maquette. L'espace parents réel nécessite un backend avec connexion sécurisée, stockage chiffré et accès uniquement après consentement écrit pour les photos.</span>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
