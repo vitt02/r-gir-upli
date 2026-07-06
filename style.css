@@ -143,6 +143,8 @@ section h2{
   box-shadow:0 2px 10px rgba(0,0,0,.06);
 }
 .card h3{color:var(--secondary);margin-bottom:.5rem;}
+.card ul{margin:.3rem 0 .3rem 1.3rem;}
+.card li{margin-bottom:.3rem;}
 table.tarife{
   width:100%;
   border-collapse:collapse;
@@ -175,6 +177,14 @@ form input, form select, form textarea{
   font-family:inherit;
   font-size:1rem;
 }
+.weekday-check{
+  display:grid;
+  gap:.5rem;
+  margin-top:.4rem;
+  font-weight:400;
+  font-size:.95rem;
+}
+.weekday-check label{font-weight:400;display:flex;align-items:center;gap:.4rem;}
 form button{
   background:var(--primary);
   color:#fff;

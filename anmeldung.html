@@ -12,6 +12,7 @@
   <a href="index.html" class="logo"><img src="Logo.jpeg" alt="Spielgruppe Rägiräupli" class="logo-img"><span data-lang="de">Spielgruppe Rägiräupli</span><span data-lang="fr">Groupe de jeu Rägiräupli</span></a>
   <nav>
     <ul>
+      <li><a href="leitbild.html" data-lang="de">Leitbild</a><a href="leitbild.html" data-lang="fr">Philosophie</a></li>
       <li><a href="konzept.html" data-lang="de">Konzept</a><a href="konzept.html" data-lang="fr">Concept</a></li>
       <li><a href="team.html" data-lang="de">Team</a><a href="team.html" data-lang="fr">Équipe</a></li>
       <li><a href="tarife.html" data-lang="de">Öffnungszeiten &amp; Tarife</a><a href="tarife.html" data-lang="fr">Horaires &amp; Tarifs</a></li>
@@ -36,9 +37,13 @@
 
 <main>
   <section>
+    <p style="margin-bottom:1.2rem;max-width:520px;">
+      <span data-lang="de">Die Aufnahme in die Spielgruppe erfolgt in der Reihenfolge der eingegangenen, unterzeichneten Anmeldungen und wird vor Beginn des ersten Spielgruppentages schriftlich bestätigt.</span>
+      <span data-lang="fr">L'admission au groupe de jeu se fait dans l'ordre des inscriptions signées reçues et sera confirmée par écrit avant le début du premier jour de groupe de jeu.</span>
+    </p>
     <form onsubmit="event.preventDefault(); alert('Demo-Formular – keine echte Übermittlung.');">
       <div>
-        <label data-lang="de">Name des Kindes</label><label data-lang="fr">Nom de l'enfant</label>
+        <label data-lang="de">Name und Vorname des Kindes</label><label data-lang="fr">Nom et prénom de l'enfant</label>
         <input type="text" required>
       </div>
       <div>
@@ -46,33 +51,79 @@
         <input type="date" required>
       </div>
       <div>
-        <label data-lang="de">Gewünschter Eintrittstermin</label><label data-lang="fr">Date d'entrée souhaitée</label>
-        <input type="date">
+        <label data-lang="de">Nationalität</label><label data-lang="fr">Nationalité</label>
+        <input type="text">
       </div>
       <div>
-        <label data-lang="de">Name Erziehungsberechtigte(r)</label><label data-lang="fr">Nom du/de la responsable légal(e)</label>
+        <label data-lang="de">Muttersprache</label><label data-lang="fr">Langue maternelle</label>
+        <input type="text">
+      </div>
+      <div>
+        <label data-lang="de">Allergien</label><label data-lang="fr">Allergies</label>
+        <input type="text">
+      </div>
+      <div>
+        <label data-lang="de">Andere gesundheitliche Informationen</label><label data-lang="fr">Autres informations de santé</label>
+        <textarea rows="2"></textarea>
+      </div>
+      <div>
+        <label data-lang="de">Namen und Alter der Geschwister</label><label data-lang="fr">Noms et âges des frères et sœurs</label>
+        <input type="text">
+      </div>
+      <div>
+        <label data-lang="de">Name und Vorname des Vaters oder der Mutter</label><label data-lang="fr">Nom et prénom du père ou de la mère</label>
         <input type="text" required>
+      </div>
+      <div>
+        <label data-lang="de">Strasse</label><label data-lang="fr">Rue</label>
+        <input type="text" required>
+      </div>
+      <div>
+        <label data-lang="de">PLZ, Ort</label><label data-lang="fr">NPA, localité</label>
+        <input type="text" required>
+      </div>
+      <div>
+        <label data-lang="de">Wer bringt / holt das Kind</label><label data-lang="fr">Qui amène / récupère l'enfant</label>
+        <input type="text">
       </div>
       <div>
         <label>E-Mail</label>
         <input type="email" required>
       </div>
       <div>
-        <label data-lang="de">Telefon</label><label data-lang="fr">Téléphone</label>
+        <label data-lang="de">Telefon Nr.</label><label data-lang="fr">N° de téléphone</label>
         <input type="tel">
       </div>
       <div>
-        <label data-lang="de">Gewünschtes Pensum</label><label data-lang="fr">Taux souhaité</label>
+        <label data-lang="de">Mutter Tel. Nr.</label><label data-lang="fr">N° de téléphone de la mère</label>
+        <input type="tel">
+      </div>
+      <div>
+        <label data-lang="de">Vater Tel. Nr.</label><label data-lang="fr">N° de téléphone du père</label>
+        <input type="tel">
+      </div>
+      <div>
+        <label data-lang="de">Spielgruppenbesuche pro Woche</label><label data-lang="fr">Fréquentation par semaine</label>
         <select>
-          <option data-de="5 Tage / Woche" data-fr="5 jours / semaine">5 Tage / Woche</option>
-          <option data-de="3–4 Tage / Woche" data-fr="3–4 jours / semaine">3–4 Tage / Woche</option>
-          <option data-de="1–2 Tage / Woche" data-fr="1–2 jours / semaine">1–2 Tage / Woche</option>
+          <option data-de="1x pro Woche" data-fr="1x par semaine">1x pro Woche</option>
+          <option data-de="2x pro Woche" data-fr="2x par semaine">2x pro Woche</option>
+          <option data-de="3x pro Woche" data-fr="3x par semaine">3x pro Woche</option>
+          <option data-de="4x pro Woche" data-fr="4x par semaine">4x pro Woche</option>
         </select>
+      </div>
+      <div>
+        <label data-lang="de">Bitte alle für Sie möglichen Termine ankreuzen:</label><label data-lang="fr">Veuillez cocher tous les jours qui vous conviennent :</label>
+        <div class="weekday-check">
+          <label><input type="checkbox" style="width:auto;display:inline;"> <span data-lang="de">Dienstag 9.00–11.30 Uhr</span><span data-lang="fr">Mardi 9h00–11h30</span></label>
+          <label><input type="checkbox" style="width:auto;display:inline;"> <span data-lang="de">Mittwoch 9.00–11.30 Uhr</span><span data-lang="fr">Mercredi 9h00–11h30</span></label>
+          <label><input type="checkbox" style="width:auto;display:inline;"> <span data-lang="de">Donnerstag 9.00–11.30 Uhr</span><span data-lang="fr">Jeudi 9h00–11h30</span></label>
+          <label><input type="checkbox" style="width:auto;display:inline;"> <span data-lang="de">Freitag 9.00–11.30 Uhr</span><span data-lang="fr">Vendredi 9h00–11h30</span></label>
+        </div>
       </div>
       <label class="consent">
         <input type="checkbox" required style="width:auto;display:inline;">
-        <span data-lang="de">Ich bin einverstanden, dass meine Angaben gemäss <a href="datenschutz.html">Datenschutzerklärung</a> zur Bearbeitung der Anmeldung gespeichert werden, und akzeptiere die <a href="vertragsbedingungen.html">Vertragsbedingungen</a>.</span>
-        <span data-lang="fr">J'accepte que mes données soient enregistrées selon la <a href="datenschutz.html">déclaration de confidentialité</a> pour le traitement de l'inscription, et j'accepte les <a href="vertragsbedingungen.html">conditions contractuelles</a>.</span>
+        <span data-lang="de">Mit der Unterzeichnung dieser Anmeldung akzeptiere ich die <a href="vertragsbedingungen.html">Vertragsbedingungen</a> der Spielgruppe Rägiräupli sowie die <a href="datenschutz.html">Datenschutzerklärung</a>.</span>
+        <span data-lang="fr">En signant cette inscription, j'accepte les <a href="vertragsbedingungen.html">conditions contractuelles</a> du Groupe de jeu Rägiräupli ainsi que la <a href="datenschutz.html">déclaration de confidentialité</a>.</span>
       </label>
       <button type="submit"><span data-lang="de">Anfrage senden</span><span data-lang="fr">Envoyer la demande</span></button>
     </form>
