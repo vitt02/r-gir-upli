@@ -270,7 +270,7 @@ footer .copyright{
 }
 [data-lang="fr"]{display:none;}
 html.fr [data-lang="de"]{display:none;}
-html.fr [data-lang="fr"]{display:initial;}
+html.fr [data-lang="fr"]{display:revert;}
 @media (max-width:700px){
   .kontakt-grid{grid-template-columns:1fr;}
   header{flex-direction:column;align-items:flex-start;}
