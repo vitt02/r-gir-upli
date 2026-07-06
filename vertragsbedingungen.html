@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vertragsbedingungen - Spielgruppe Rägiräupli</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo"><span class="icon">🐛</span> <span data-lang="de">Spielgruppe Rägiräupli</span><span data-lang="fr">Groupe de jeu Rägiräupli</span></a>
+  <nav>
+    <ul>
+      <li><a href="konzept.html" data-lang="de">Konzept</a><a href="konzept.html" data-lang="fr">Concept</a></li>
+      <li><a href="team.html" data-lang="de">Team</a><a href="team.html" data-lang="fr">Équipe</a></li>
+      <li><a href="tarife.html" data-lang="de">Öffnungszeiten &amp; Tarife</a><a href="tarife.html" data-lang="fr">Horaires &amp; Tarifs</a></li>
+      <li><a href="anmeldung.html" data-lang="de">Anmeldung</a><a href="anmeldung.html" data-lang="fr">Inscription</a></li>
+      <li><a href="kontakt.html" data-lang="de">Kontakt</a><a href="kontakt.html" data-lang="fr">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="header-actions">
+    <div class="lang-switch">
+      <button id="btn-de" class="active" onclick="setLang('de')">DE</button>
+      <button id="btn-fr" onclick="setLang('fr')">FR</button>
+    </div>
+    <button class="btn-eltern" onclick="openModal()">
+      <span data-lang="de">Elternbereich</span><span data-lang="fr">Espace parents</span>
+    </button>
+  </div>
+</header>
+
+<div class="page-header">
+  <h1><span data-lang="de">Vertragsbedingungen</span><span data-lang="fr">Conditions contractuelles</span></h1>
+</div>
+
+<main>
+  <section>
+    <div class="card" style="max-width:700px;">
+      <p data-lang="de"><strong>Anmeldung &amp; Aufnahme:</strong> Mit der Anmeldung reserviert die Familie einen Betreuungsplatz. Die Aufnahme gilt erst nach schriftlicher Bestätigung durch die Spielgruppe Rägiräupli.</p>
+      <p data-lang="fr"><strong>Inscription et admission :</strong> l'inscription réserve une place de garde. L'admission n'est valable qu'après confirmation écrite du Groupe de jeu Rägiräupli.</p>
+      <br>
+      <p data-lang="de"><strong>Kündigungsfrist:</strong> Der Betreuungsplatz kann von beiden Seiten mit einer Frist von einem Monat auf das Ende eines Monats schriftlich gekündigt werden.</p>
+      <p data-lang="fr"><strong>Délai de résiliation :</strong> la place de garde peut être résiliée par écrit par les deux parties avec un préavis d'un mois pour la fin d'un mois.</p>
+      <br>
+      <p data-lang="de"><strong>Zahlungsbedingungen:</strong> Die Rechnungsstellung erfolgt monatlich im Voraus. Das Zahlungsziel beträgt 30 Tage. Reservierte, aber nicht bezogene Tage werden grundsätzlich in Rechnung gestellt.</p>
+      <p data-lang="fr"><strong>Conditions de paiement :</strong> la facturation est mensuelle et payable d'avance. Le délai de paiement est de 30 jours. Les jours réservés mais non utilisés restent en principe facturés.</p>
+      <br>
+      <p data-lang="de"><strong>Absenzen &amp; Krankheit:</strong> Abwesenheiten sind der Spielgruppe frühzeitig zu melden. Bei Krankheit über mehrere Tage kann ein Arztzeugnis verlangt werden; eine Rückerstattung erfolgt nur in begründeten Ausnahmefällen.</p>
+      <p data-lang="fr"><strong>Absences et maladie :</strong> les absences doivent être annoncées à temps. En cas de maladie de plusieurs jours, un certificat médical peut être exigé ; un remboursement n'est accordé que dans des cas exceptionnels justifiés.</p>
+      <br>
+      <p data-lang="de"><strong>Ausschluss:</strong> Die Spielgruppe kann das Betreuungsverhältnis bei wiederholtem Zahlungsverzug oder aus wichtigem Grund (z.B. Gefährdung anderer Kinder) fristlos auflösen.</p>
+      <p data-lang="fr"><strong>Exclusion :</strong> le Groupe de jeu peut résilier immédiatement le contrat de garde en cas de retard de paiement répété ou pour un motif important (p. ex. mise en danger d'autres enfants).</p>
+      <br>
+      <p data-lang="de"><strong>Haftung:</strong> Für mitgebrachte persönliche Gegenstände wird keine Haftung übernommen. Die Haftpflichtversicherung des Kindes bleibt Sache der Erziehungsberechtigten.</p>
+      <p data-lang="fr"><strong>Responsabilité :</strong> aucune responsabilité n'est assumée pour les objets personnels apportés. L'assurance responsabilité civile de l'enfant reste à la charge des responsables légaux.</p>
+      <br>
+      <p data-lang="de"><strong>Fotos &amp; Datenschutz:</strong> Es gelten ergänzend die Bestimmungen der <a href="datenschutz.html">Datenschutzerklärung</a>, insbesondere zur Foto-Einwilligung.</p>
+      <p data-lang="fr"><strong>Photos et protection des données :</strong> les dispositions de la <a href="datenschutz.html">déclaration de confidentialité</a> s'appliquent en complément, notamment concernant le consentement pour les photos.</p>
+      <br>
+      <p data-lang="de"><strong>Änderungen &amp; Recht:</strong> Änderungen dieser Vertragsbedingungen werden den Eltern rechtzeitig schriftlich mitgeteilt. Es gilt Schweizer Recht, Gerichtsstand ist Regensdorf.</p>
+      <p data-lang="fr"><strong>Modifications et droit applicable :</strong> toute modification des présentes conditions est communiquée par écrit en temps utile aux parents. Le droit suisse s'applique, for juridique à Regensdorf.</p>
+      <br>
+      <p data-lang="de">Fragen zu diesen Vertragsbedingungen richten Sie bitte an alessia.spielgruppe@outlook.ch.</p>
+      <p data-lang="fr">Pour toute question relative aux présentes conditions, contactez alessia.spielgruppe@outlook.ch.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h3 data-lang="de">Spielgruppe Rägiräupli</h3><h3 data-lang="fr">Groupe de jeu Rägiräupli</h3>
+      <p data-lang="de">Watterstrasse 17, 8105 Regensdorf</p>
+      <p data-lang="fr">Watterstrasse 17, 8105 Regensdorf</p>
+    </div>
+    <div>
+      <h3 data-lang="de">Rechtliches</h3><h3 data-lang="fr">Mentions légales</h3>
+      <p><a href="impressum.html" data-lang="de">Impressum</a><a href="impressum.html" data-lang="fr">Mentions légales</a></p>
+      <p><a href="datenschutz.html" data-lang="de">Datenschutzerklärung</a><a href="datenschutz.html" data-lang="fr">Déclaration de confidentialité</a></p>
+      <p><a href="vertragsbedingungen.html" class="current" data-lang="de">Vertragsbedingungen</a><a href="vertragsbedingungen.html" class="current" data-lang="fr">Conditions contractuelles</a></p>
+    </div>
+    <div>
+      <h3 data-lang="de">Kontakt</h3><h3 data-lang="fr">Contact</h3>
+      <p data-lang="de">Telefon: 076 249 36 36<br>alessia.spielgruppe@outlook.ch</p>
+      <p data-lang="fr">Téléphone: 076 249 36 36<br>alessia.spielgruppe@outlook.ch</p>
+    </div>
+  </div>
+  <div class="copyright">© 2026 Spielgruppe Rägiräupli · <span data-lang="de">Alle Rechte vorbehalten</span><span data-lang="fr">Tous droits réservés</span></div>
+</footer>
+
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <h2><span data-lang="de">Elternbereich</span><span data-lang="fr">Espace parents</span><span class="badge-demo">DEMO</span></h2>
+    <form onsubmit="event.preventDefault(); alert('Demo-Login – im echten System folgt hier ein gesicherter Bereich mit Fotos und Dokumenten.');" style="box-shadow:none;padding:0;margin-top:1rem;">
+      <div>
+        <label>E-Mail</label>
+        <input type="email" required>
+      </div>
+      <div>
+        <label data-lang="de">Passwort</label><label data-lang="fr">Mot de passe</label>
+        <input type="password" required>
+      </div>
+      <button type="submit"><span data-lang="de">Anmelden</span><span data-lang="fr">Connexion</span></button>
+    </form>
+    <div class="modal-note">
+      <span data-lang="de">Hinweis: Dies ist ein reines Layout-Muster. Der echte Elternbereich benötigt ein Backend mit sicherem Login, verschlüsselter Dateiablage und Zugriff nur nach schriftlicher Foto-Einwilligung.</span>
+      <span data-lang="fr">Remarque : ceci est une maquette. L'espace parents réel nécessite un backend avec connexion sécurisée, stockage chiffré et accès uniquement après consentement écrit pour les photos.</span>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
