@@ -6,58 +6,53 @@
 <title>Leitbild - Spielgruppe Rägiräupli</title>
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-i18n-title="leitbild_title_page">
 
 <header>
-  <a href="index.html" class="logo"><img src="Logo.jpeg" alt="Spielgruppe Rägiräupli" class="logo-img"><span data-lang="de">Spielgruppe Rägiräupli</span><span data-lang="fr">Groupe de jeu Rägiräupli</span></a>
+  <a href="index.html" class="logo"><img src="Logo.png" alt="Spielgruppe Rägiräupli" class="logo-img"><span data-i18n="brand_name"></span></a>
   <nav>
     <ul>
-      <li><a href="leitbild.html" class="current" data-lang="de">Leitbild</a><a href="leitbild.html" class="current" data-lang="fr">Philosophie</a></li>
-      <li><a href="konzept.html" data-lang="de">Konzept</a><a href="konzept.html" data-lang="fr">Concept</a></li>
-      <li><a href="team.html" data-lang="de">Team</a><a href="team.html" data-lang="fr">Équipe</a></li>
-      <li><a href="tarife.html" data-lang="de">Öffnungszeiten &amp; Tarife</a><a href="tarife.html" data-lang="fr">Horaires &amp; Tarifs</a></li>
-      <li><a href="anmeldung.html" data-lang="de">Anmeldung</a><a href="anmeldung.html" data-lang="fr">Inscription</a></li>
-      <li><a href="kontakt.html" data-lang="de">Kontakt</a><a href="kontakt.html" data-lang="fr">Contact</a></li>
+      <li><a href="leitbild.html" class="current" data-i18n="nav_leitbild"></a></li>
+      <li><a href="konzept.html" data-i18n="nav_konzept"></a></li>
+      <li><a href="team.html" data-i18n="nav_team"></a></li>
+      <li><a href="tarife.html" data-i18n="nav_tarife"></a></li>
+      <li><a href="anmeldung.html" data-i18n="nav_anmeldung"></a></li>
+      <li><a href="kontakt.html" data-i18n="nav_kontakt"></a></li>
     </ul>
   </nav>
   <div class="header-actions">
     <div class="lang-switch">
-      <button id="btn-de" class="active" onclick="setLang('de')">DE</button>
-      <button id="btn-fr" onclick="setLang('fr')">FR</button>
+      <select id="lang-select" onchange="setLang(this.value)">
+        <option value="de">Deutsch</option>
+        <option value="fr">Français</option>
+        <option value="en">English</option>
+        <option value="it">Italiano</option>
+        <option value="pt">Português</option>
+      </select>
     </div>
-    <button class="btn-eltern" onclick="openModal()">
-      <span data-lang="de">Elternbereich</span><span data-lang="fr">Espace parents</span>
-    </button>
   </div>
 </header>
 
 <div class="page-header">
-  <h1><span data-lang="de">Leitbild</span><span data-lang="fr">Notre philosophie</span></h1>
+  <h1 data-i18n="leitbild_title"></h1>
 </div>
 
 <main>
   <section>
     <div class="card" style="max-width:700px;">
-      <p data-lang="de"><strong>In unserer Spielgruppe steht das Kind im Mittelpunkt.</strong></p>
-      <p data-lang="fr"><strong>Dans notre groupe de jeu, l'enfant est au centre de notre attention.</strong></p>
+      <p><strong data-i18n="leitbild_p1"></strong></p>
       <br>
-      <p data-lang="de">Jedes Kind ist einzigartig und bringt seine eigenen Bedürfnisse, Fähigkeiten und sein eigenes Tempo mit. Wir bieten einen geschützten Raum, in dem Kinder sich wohlfühlen, entdecken und entfalten dürfen.</p>
-      <p data-lang="fr">Chaque enfant est unique et apporte ses propres besoins, capacités et son propre rythme. Nous offrons un espace protégé où les enfants peuvent se sentir bien, découvrir et s'épanouir.</p>
+      <p data-i18n="leitbild_p2"></p>
       <br>
-      <p data-lang="de">Durch freies Spiel und vielfältige Angebote ermöglichen wir den Kindern, die Welt spielerisch und mit allen Sinnen zu erfahren. Dabei fördern wir ihre Neugier, Kreativität und Freude am gemeinsamen Tun.</p>
-      <p data-lang="fr">Par le jeu libre et des activités variées, nous permettons aux enfants de découvrir le monde de manière ludique et avec tous leurs sens. Nous encourageons ainsi leur curiosité, leur créativité et leur plaisir à agir ensemble.</p>
+      <p data-i18n="leitbild_p3"></p>
       <br>
-      <p data-lang="de">Ein zentraler Bestandteil unserer Arbeit ist das soziale Miteinander. Die Kinder lernen, ihren Platz in der Gruppe zu finden, Rücksicht zu nehmen, Freundschaften zu knüpfen und erste Konflikte altersgerecht zu lösen.</p>
-      <p data-lang="fr">Un élément central de notre travail est la vie sociale en groupe. Les enfants apprennent à trouver leur place dans le groupe, à faire preuve de considération, à nouer des amitiés et à résoudre les premiers conflits de manière adaptée à leur âge.</p>
+      <p data-i18n="leitbild_p4"></p>
       <br>
-      <p data-lang="de">Wir begleiten die Kinder einfühlsam auf ihrem Weg in die Selbstständigkeit. Sanfte Ablösungsprozesse, Vertrauen und Sicherheit bilden dabei die Grundlage für eine gesunde Entwicklung.</p>
-      <p data-lang="fr">Nous accompagnons les enfants avec empathie sur leur chemin vers l'autonomie. Des processus de séparation en douceur, la confiance et la sécurité constituent la base d'un développement sain.</p>
+      <p data-i18n="leitbild_p5"></p>
       <br>
-      <p data-lang="de">Jedes Kind darf bei uns wachsen und sich entwickeln – in seinem eigenen Tempo. Wir begegnen den Kindern mit Wertschätzung, Geduld und Respekt.</p>
-      <p data-lang="fr">Chaque enfant peut grandir et se développer chez nous – à son propre rythme. Nous rencontrons les enfants avec estime, patience et respect.</p>
+      <p data-i18n="leitbild_p6"></p>
       <br>
-      <p data-lang="de">Eine vertrauensvolle Zusammenarbeit mit den Eltern ist für uns von grosser Bedeutung. Gemeinsam schaffen wir ein Umfeld, in dem sich die Kinder geborgen fühlen und sich ganzheitlich entwickeln können.</p>
-      <p data-lang="fr">Une collaboration de confiance avec les parents est pour nous d'une grande importance. Ensemble, nous créons un environnement dans lequel les enfants se sentent en sécurité et peuvent se développer de manière globale.</p>
+      <p data-i18n="leitbild_p7"></p>
     </div>
   </section>
 </main>
@@ -65,47 +60,24 @@
 <footer>
   <div class="footer-grid">
     <div>
-      <h3 data-lang="de">Spielgruppe Rägiräupli</h3><h3 data-lang="fr">Groupe de jeu Rägiräupli</h3>
-      <p data-lang="de">Watterstrasse 17, 8105 Regensdorf</p>
-      <p data-lang="fr">Watterstrasse 17, 8105 Regensdorf</p>
+      <h3 data-i18n="brand_name"></h3>
+      <p data-i18n="footer_address"></p>
     </div>
     <div>
-      <h3 data-lang="de">Rechtliches</h3><h3 data-lang="fr">Mentions légales</h3>
-      <p><a href="impressum.html" data-lang="de">Impressum</a><a href="impressum.html" data-lang="fr">Mentions légales</a></p>
-      <p><a href="datenschutz.html" data-lang="de">Datenschutzerklärung</a><a href="datenschutz.html" data-lang="fr">Déclaration de confidentialité</a></p>
-      <p><a href="vertragsbedingungen.html" data-lang="de">Vertragsbedingungen</a><a href="vertragsbedingungen.html" data-lang="fr">Conditions contractuelles</a></p>
+      <h3 data-i18n="footer_legal"></h3>
+      <p><a href="impressum.html" data-i18n="footer_impressum"></a></p>
+      <p><a href="datenschutz.html" data-i18n="footer_datenschutz"></a></p>
+      <p><a href="vertragsbedingungen.html" data-i18n="footer_vertrag"></a></p>
     </div>
     <div>
-      <h3 data-lang="de">Kontakt</h3><h3 data-lang="fr">Contact</h3>
-      <p data-lang="de">Telefon: 076 249 36 36<br>alessia.spielgruppe@outlook.ch</p>
-      <p data-lang="fr">Téléphone: 076 249 36 36<br>alessia.spielgruppe@outlook.ch</p>
+      <h3 data-i18n="footer_kontakt"></h3>
+      <p><span data-i18n="footer_telefon"></span>: 076 249 36 36<br>alessia.spielgruppe@outlook.com</p>
     </div>
   </div>
-  <div class="copyright">© 2026 Spielgruppe Rägiräupli · <span data-lang="de">Alle Rechte vorbehalten</span><span data-lang="fr">Tous droits réservés</span></div>
+  <div class="copyright">© 2026 <span data-i18n="brand_name"></span> · <span data-i18n="footer_rechte"></span></div>
 </footer>
 
-<div class="modal-overlay" id="modal">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal()">&times;</button>
-    <h2><span data-lang="de">Elternbereich</span><span data-lang="fr">Espace parents</span><span class="badge-demo">DEMO</span></h2>
-    <form onsubmit="event.preventDefault(); alert('Demo-Login – im echten System folgt hier ein gesicherter Bereich mit Fotos und Dokumenten.');" style="box-shadow:none;padding:0;margin-top:1rem;">
-      <div>
-        <label>E-Mail</label>
-        <input type="email" required>
-      </div>
-      <div>
-        <label data-lang="de">Passwort</label><label data-lang="fr">Mot de passe</label>
-        <input type="password" required>
-      </div>
-      <button type="submit"><span data-lang="de">Anmelden</span><span data-lang="fr">Connexion</span></button>
-    </form>
-    <div class="modal-note">
-      <span data-lang="de">Hinweis: Dies ist ein reines Layout-Muster. Der echte Elternbereich benötigt ein Backend mit sicherem Login, verschlüsselter Dateiablage und Zugriff nur nach schriftlicher Foto-Einwilligung.</span>
-      <span data-lang="fr">Remarque : ceci est une maquette. L'espace parents réel nécessite un backend avec connexion sécurisée, stockage chiffré et accès uniquement après consentement écrit pour les photos.</span>
-    </div>
-  </div>
-</div>
-
+<script src="translations.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

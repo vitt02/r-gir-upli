@@ -6,67 +6,59 @@
 <title>Vertragsbedingungen - Spielgruppe Rägiräupli</title>
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-i18n-title="vertrag_title_page">
 
 <header>
-  <a href="index.html" class="logo"><img src="Logo.jpeg" alt="Spielgruppe Rägiräupli" class="logo-img"><span data-lang="de">Spielgruppe Rägiräupli</span><span data-lang="fr">Groupe de jeu Rägiräupli</span></a>
+  <a href="index.html" class="logo"><img src="Logo.png" alt="Spielgruppe Rägiräupli" class="logo-img"><span data-i18n="brand_name"></span></a>
   <nav>
     <ul>
-      <li><a href="leitbild.html" data-lang="de">Leitbild</a><a href="leitbild.html" data-lang="fr">Philosophie</a></li>
-      <li><a href="konzept.html" data-lang="de">Konzept</a><a href="konzept.html" data-lang="fr">Concept</a></li>
-      <li><a href="team.html" data-lang="de">Team</a><a href="team.html" data-lang="fr">Équipe</a></li>
-      <li><a href="tarife.html" data-lang="de">Öffnungszeiten &amp; Tarife</a><a href="tarife.html" data-lang="fr">Horaires &amp; Tarifs</a></li>
-      <li><a href="anmeldung.html" data-lang="de">Anmeldung</a><a href="anmeldung.html" data-lang="fr">Inscription</a></li>
-      <li><a href="kontakt.html" data-lang="de">Kontakt</a><a href="kontakt.html" data-lang="fr">Contact</a></li>
+      <li><a href="leitbild.html" data-i18n="nav_leitbild"></a></li>
+      <li><a href="konzept.html" data-i18n="nav_konzept"></a></li>
+      <li><a href="team.html" data-i18n="nav_team"></a></li>
+      <li><a href="tarife.html" data-i18n="nav_tarife"></a></li>
+      <li><a href="anmeldung.html" data-i18n="nav_anmeldung"></a></li>
+      <li><a href="kontakt.html" data-i18n="nav_kontakt"></a></li>
     </ul>
   </nav>
   <div class="header-actions">
     <div class="lang-switch">
-      <button id="btn-de" class="active" onclick="setLang('de')">DE</button>
-      <button id="btn-fr" onclick="setLang('fr')">FR</button>
+      <select id="lang-select" onchange="setLang(this.value)">
+        <option value="de">Deutsch</option>
+        <option value="fr">Français</option>
+        <option value="en">English</option>
+        <option value="it">Italiano</option>
+        <option value="pt">Português</option>
+      </select>
     </div>
-    <button class="btn-eltern" onclick="openModal()">
-      <span data-lang="de">Elternbereich</span><span data-lang="fr">Espace parents</span>
-    </button>
   </div>
 </header>
 
 <div class="page-header">
-  <h1><span data-lang="de">Vertragsbedingungen</span><span data-lang="fr">Conditions contractuelles</span></h1>
+  <h1 data-i18n="vertrag_title"></h1>
 </div>
 
 <main>
   <section>
     <div class="card" style="max-width:700px;">
-      <p data-lang="de">Der Besuch der Spielgruppe ist freiwillig. Mit der Anmeldung verpflichten sich die Eltern, die folgenden Vertragsbedingungen einzuhalten.</p>
-      <p data-lang="fr">La fréquentation du groupe de jeu est volontaire. En s'inscrivant, les parents s'engagent à respecter les présentes conditions contractuelles.</p>
+      <p data-i18n="vertrag_intro"></p>
       <br>
-      <p data-lang="de"><strong>Ferienabsenzen/Absenzen:</strong> Bei Abwesenheiten des Kindes infolge Krankheit oder Ferien (ausserhalb der offiziellen Schulferien der Gemeinde Regensdorf) werden keine Vergünstigungen oder Rückvergütungen getätigt. Die Spielgruppe Rägiräupli ist während der Schulferien (Gemeinde Regensdorf) geschlossen und ist in dieser Zeit kostenlos.</p>
-      <p data-lang="fr"><strong>Absences pendant les vacances / Absences :</strong> en cas d'absence de l'enfant pour cause de maladie ou de vacances (en dehors des vacances scolaires officielles de la commune de Regensdorf), aucune réduction ni remboursement n'est accordé. Le Groupe de jeu Rägiräupli est fermé pendant les vacances scolaires (commune de Regensdorf) et est gratuit durant cette période.</p>
+      <p><strong data-i18n="vertrag_absenzen_b"></strong> <span data-i18n="vertrag_absenzen_p"></span></p>
       <br>
-      <p data-lang="de"><strong>Versicherung:</strong> Es besteht keine Unfallversicherung durch die Spielgruppe Rägiräupli. Bitte sorgen Sie dafür, dass Ihr Kind privat haftpflichtversichert ist, um Schäden oder Unfälle abzudecken.</p>
-      <p data-lang="fr"><strong>Assurance :</strong> le Groupe de jeu Rägiräupli ne dispose d'aucune assurance accident. Veuillez vous assurer que votre enfant est couvert par une assurance responsabilité civile privée afin de couvrir les dommages ou accidents.</p>
+      <p><strong data-i18n="vertrag_versicherung_b"></strong> <span data-i18n="vertrag_versicherung_p"></span></p>
       <br>
-      <p data-lang="de"><strong>Bring- und Abholzeiten:</strong> Bringen Sie Ihr Kind höchstens 10 Minuten vor Beginn der Spielgruppe. Die Aufsichtspflicht der Spielgruppenleiterinnen endet, sobald die offizielle Spielzeit beendet ist. Falls Sie Verspätung haben sollten, bitten wir Sie, uns frühzeitig telefonisch zu benachrichtigen, damit wir entsprechend handeln können. Sollten Sie nicht anrufen und zu spät kommen, liegt die Verletzung der Sorgfaltspflicht bei Ihnen. Bei mehrmaligen und längeren Verspätungen wird ein Unkostenbeitrag von Fr. 30.– erhoben. Die Kinder freuen sich, wenn Mama oder Papa sie pünktlich in Empfang nehmen können!</p>
-      <p data-lang="fr"><strong>Horaires d'arrivée et de départ :</strong> amenez votre enfant au maximum 10 minutes avant le début du groupe de jeu. L'obligation de surveillance des responsables du groupe de jeu prend fin dès que l'horaire officiel est terminé. En cas de retard, merci de nous avertir à temps par téléphone afin que nous puissions agir en conséquence. Si vous n'appelez pas et arrivez en retard, la responsabilité en incombe à vous. En cas de retards répétés ou prolongés, une contribution aux frais de Fr. 30.– est perçue. Les enfants sont heureux quand maman ou papa vient les chercher à l'heure !</p>
+      <p><strong data-i18n="vertrag_bringen_b"></strong> <span data-i18n="vertrag_bringen_p"></span></p>
       <br>
-      <p data-lang="de"><strong>Austritt aus der Spielgruppe:</strong> Mit einer Anmeldung bei der Spielgruppe Rägiräupli gehen Sie einen Jahresvertrag ein. Eine Kündigung ist 3 Monate im Voraus auf Ende jedes Monats möglich. Diese hat in schriftlicher Form an Alessia Polvere, Pächterriedstrasse 57, 8105 Watt zu erfolgen. Die Anmeldung gilt automatisch für das nächste Schuljahr, jedoch nur bis zum Eintritt Ihres Kindes in den Kindergarten. Bei besonderen Umständen ist von unserer Seite jederzeit die Kündigung möglich.</p>
-      <p data-lang="fr"><strong>Sortie du groupe de jeu :</strong> en vous inscrivant au Groupe de jeu Rägiräupli, vous concluez un contrat annuel. Une résiliation est possible avec un préavis de 3 mois pour la fin de chaque mois. Elle doit se faire par écrit à l'adresse suivante : Alessia Polvere, Pächterriedstrasse 57, 8105 Watt. L'inscription est automatiquement reconduite pour l'année scolaire suivante, mais uniquement jusqu'à l'entrée de votre enfant à l'école enfantine. Dans des circonstances particulières, une résiliation de notre part est possible à tout moment.</p>
+      <p><strong data-i18n="vertrag_austritt_b"></strong> <span data-i18n="vertrag_austritt_p"></span></p>
       <br>
-      <p data-lang="de"><strong>Zahlungsbedingungen:</strong> Die Beiträge für die Spielgruppe sind stets rechtzeitig zu bezahlen. Bei Nichtbezahlen der Rechnung und der 1. und 2. Mahnung wird eine Betreibung eingeleitet. Wenn Sie danach Ihr Kind weiterhin zur Spielgruppe bringen wollen, wird der Beitrag in Bar (bei Ablieferung des Kindes) bei jedem Mal einzeln fällig. Es steht der Spielgruppe Rägiräupli frei, Ihr Kind nicht mehr in Empfang zu nehmen, wenn der Beitrag nicht bezahlt wird. Alle Angaben werden vertraulich behandelt und sind zur Sicherheit Ihres Kindes gedacht.</p>
-      <p data-lang="fr"><strong>Conditions de paiement :</strong> les contributions pour le groupe de jeu doivent toujours être payées à temps. En cas de non-paiement de la facture et des 1er et 2e rappels, une poursuite sera engagée. Si vous souhaitez malgré tout continuer à amener votre enfant au groupe de jeu, la contribution devra être payée comptant (à la remise de l'enfant), à chaque fois individuellement. Le Groupe de jeu Rägiräupli se réserve le droit de ne plus accueillir votre enfant si la contribution n'est pas payée. Toutes les informations sont traitées de manière confidentielle et servent à la sécurité de votre enfant.</p>
+      <p><strong data-i18n="vertrag_zahlung_b"></strong> <span data-i18n="vertrag_zahlung_p"></span></p>
       <br>
-      <p data-lang="de"><strong>Fotos:</strong> In der Spielgruppe werden von der Spielgruppenleiterin Fotos gemacht. Diese werden nur z.B. für Basteln oder Geburtstage verwendet. Einmal im Jahr kommt der Schulfotograf in die Spielgruppe. Ergänzend gelten die Bestimmungen der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
-      <p data-lang="fr"><strong>Photos :</strong> des photos sont prises par la responsable du groupe de jeu. Elles ne sont utilisées, par exemple, que pour le bricolage ou les anniversaires. Une fois par an, le photographe scolaire vient au groupe de jeu. Les dispositions de la <a href="datenschutz.html">déclaration de confidentialité</a> s'appliquent en complément.</p>
+      <p><strong data-i18n="vertrag_fotos_b"></strong> <span data-i18n-html="vertrag_fotos_html"></span></p>
       <br>
-      <p data-lang="de"><strong>Entbindung der Schweigepflicht:</strong> Zum Wohl der Kinder fördert die Spielgruppe Rägiräupli den fachlichen Austausch mit den Kindergartenlehrpersonen der Primarschule Regensdorf. Mit der Anmeldung ihres Kindes in der Spielgruppe entbinden die Eltern die Spielgruppenleitung von der Schweigepflicht gegenüber den zukünftigen Kindergartenlehrpersonen, welche das Kind später im Kindergarten begleiten werden. Sollte ein Gespräch im Rahmen der Logopädie oder Heilpädagogik notwendig sein, nimmt die Spielgruppenleitung zuerst Kontakt mit den Eltern auf und holt deren Einverständnis ein.</p>
-      <p data-lang="fr"><strong>Levée du secret professionnel :</strong> pour le bien des enfants, le Groupe de jeu Rägiräupli encourage l'échange professionnel avec les enseignant(e)s des classes enfantines de l'école primaire de Regensdorf. En inscrivant leur enfant au groupe de jeu, les parents libèrent la direction du groupe de jeu du secret professionnel envers les futur(e)s enseignant(e)s qui accompagneront l'enfant à l'école enfantine. Si un entretien dans le cadre de la logopédie ou de la pédagogie spécialisée s'avère nécessaire, la direction du groupe de jeu prend d'abord contact avec les parents et obtient leur accord.</p>
+      <p><strong data-i18n="vertrag_schweigepflicht_b"></strong> <span data-i18n="vertrag_schweigepflicht_p"></span></p>
       <br>
-      <p data-lang="de"><strong>Alter der Kinder:</strong> Die Spielgruppe ist generell für Kinder ab 2,5 Jahren geöffnet. In besonderen Fällen können Ausnahmen gemacht werden. Für neue Interessenten biete ich die Möglichkeit eines persönlichen Gesprächs und eines Schnuppertages an, um die Spielgruppe kennenzulernen. Ich freue mich darauf, Sie und Ihr Kind in der Spielgruppe Rägiräupli begrüssen zu dürfen und gemeinsam eine schöne Zeit zu verbringen. Bei Fragen stehe ich Ihnen gerne zur Verfügung und helfe Ihnen, den Einstieg so einfach wie möglich zu gestalten.</p>
-      <p data-lang="fr"><strong>Âge des enfants :</strong> le groupe de jeu est en général ouvert aux enfants dès 2,5 ans. Des exceptions peuvent être faites dans des cas particuliers. Pour les nouveaux intéressés, je propose la possibilité d'un entretien personnel et d'une journée d'essai afin de découvrir le groupe de jeu. Je me réjouis de vous accueillir, vous et votre enfant, au Groupe de jeu Rägiräupli et de passer ensemble un bon moment. Pour toute question, je me tiens volontiers à votre disposition et vous aide à rendre les débuts aussi simples que possible.</p>
+      <p><strong data-i18n="vertrag_alter_b"></strong> <span data-i18n="vertrag_alter_p"></span></p>
       <br>
-      <p data-lang="de" style="text-align:right;">Alessia Polvere<br>Spielgruppe Rägiräupli</p>
-      <p data-lang="fr" style="text-align:right;">Alessia Polvere<br>Groupe de jeu Rägiräupli</p>
+      <p style="text-align:right;" data-i18n-html="vertrag_signature"></p>
     </div>
   </section>
 </main>
@@ -74,47 +66,24 @@
 <footer>
   <div class="footer-grid">
     <div>
-      <h3 data-lang="de">Spielgruppe Rägiräupli</h3><h3 data-lang="fr">Groupe de jeu Rägiräupli</h3>
-      <p data-lang="de">Watterstrasse 17, 8105 Regensdorf</p>
-      <p data-lang="fr">Watterstrasse 17, 8105 Regensdorf</p>
+      <h3 data-i18n="brand_name"></h3>
+      <p data-i18n="footer_address"></p>
     </div>
     <div>
-      <h3 data-lang="de">Rechtliches</h3><h3 data-lang="fr">Mentions légales</h3>
-      <p><a href="impressum.html" data-lang="de">Impressum</a><a href="impressum.html" data-lang="fr">Mentions légales</a></p>
-      <p><a href="datenschutz.html" data-lang="de">Datenschutzerklärung</a><a href="datenschutz.html" data-lang="fr">Déclaration de confidentialité</a></p>
-      <p><a href="vertragsbedingungen.html" class="current" data-lang="de">Vertragsbedingungen</a><a href="vertragsbedingungen.html" class="current" data-lang="fr">Conditions contractuelles</a></p>
+      <h3 data-i18n="footer_legal"></h3>
+      <p><a href="impressum.html" data-i18n="footer_impressum"></a></p>
+      <p><a href="datenschutz.html" data-i18n="footer_datenschutz"></a></p>
+      <p><a href="vertragsbedingungen.html" class="current" data-i18n="footer_vertrag"></a></p>
     </div>
     <div>
-      <h3 data-lang="de">Kontakt</h3><h3 data-lang="fr">Contact</h3>
-      <p data-lang="de">Telefon: 076 249 36 36<br>alessia.spielgruppe@outlook.ch</p>
-      <p data-lang="fr">Téléphone: 076 249 36 36<br>alessia.spielgruppe@outlook.ch</p>
+      <h3 data-i18n="footer_kontakt"></h3>
+      <p><span data-i18n="footer_telefon"></span>: 076 249 36 36<br>alessia.spielgruppe@outlook.com</p>
     </div>
   </div>
-  <div class="copyright">© 2026 Spielgruppe Rägiräupli · <span data-lang="de">Alle Rechte vorbehalten</span><span data-lang="fr">Tous droits réservés</span></div>
+  <div class="copyright">© 2026 <span data-i18n="brand_name"></span> · <span data-i18n="footer_rechte"></span></div>
 </footer>
 
-<div class="modal-overlay" id="modal">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal()">&times;</button>
-    <h2><span data-lang="de">Elternbereich</span><span data-lang="fr">Espace parents</span><span class="badge-demo">DEMO</span></h2>
-    <form onsubmit="event.preventDefault(); alert('Demo-Login – im echten System folgt hier ein gesicherter Bereich mit Fotos und Dokumenten.');" style="box-shadow:none;padding:0;margin-top:1rem;">
-      <div>
-        <label>E-Mail</label>
-        <input type="email" required>
-      </div>
-      <div>
-        <label data-lang="de">Passwort</label><label data-lang="fr">Mot de passe</label>
-        <input type="password" required>
-      </div>
-      <button type="submit"><span data-lang="de">Anmelden</span><span data-lang="fr">Connexion</span></button>
-    </form>
-    <div class="modal-note">
-      <span data-lang="de">Hinweis: Dies ist ein reines Layout-Muster. Der echte Elternbereich benötigt ein Backend mit sicherem Login, verschlüsselter Dateiablage und Zugriff nur nach schriftlicher Foto-Einwilligung.</span>
-      <span data-lang="fr">Remarque : ceci est une maquette. L'espace parents réel nécessite un backend avec connexion sécurisée, stockage chiffré et accès uniquement après consentement écrit pour les photos.</span>
-    </div>
-  </div>
-</div>
-
+<script src="translations.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

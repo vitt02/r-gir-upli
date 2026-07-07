@@ -6,126 +6,141 @@
 <title>Anmeldung - Spielgruppe Rägiräupli</title>
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-i18n-title="anmeldung_title_page">
 
 <header>
-  <a href="index.html" class="logo"><img src="Logo.jpeg" alt="Spielgruppe Rägiräupli" class="logo-img"><span data-lang="de">Spielgruppe Rägiräupli</span><span data-lang="fr">Groupe de jeu Rägiräupli</span></a>
+  <a href="index.html" class="logo"><img src="Logo.png" alt="Spielgruppe Rägiräupli" class="logo-img"><span data-i18n="brand_name"></span></a>
   <nav>
     <ul>
-      <li><a href="leitbild.html" data-lang="de">Leitbild</a><a href="leitbild.html" data-lang="fr">Philosophie</a></li>
-      <li><a href="konzept.html" data-lang="de">Konzept</a><a href="konzept.html" data-lang="fr">Concept</a></li>
-      <li><a href="team.html" data-lang="de">Team</a><a href="team.html" data-lang="fr">Équipe</a></li>
-      <li><a href="tarife.html" data-lang="de">Öffnungszeiten &amp; Tarife</a><a href="tarife.html" data-lang="fr">Horaires &amp; Tarifs</a></li>
-      <li><a href="anmeldung.html" class="current" data-lang="de">Anmeldung</a><a href="anmeldung.html" class="current" data-lang="fr">Inscription</a></li>
-      <li><a href="kontakt.html" data-lang="de">Kontakt</a><a href="kontakt.html" data-lang="fr">Contact</a></li>
+      <li><a href="leitbild.html" data-i18n="nav_leitbild"></a></li>
+      <li><a href="konzept.html" data-i18n="nav_konzept"></a></li>
+      <li><a href="team.html" data-i18n="nav_team"></a></li>
+      <li><a href="tarife.html" data-i18n="nav_tarife"></a></li>
+      <li><a href="anmeldung.html" class="current" data-i18n="nav_anmeldung"></a></li>
+      <li><a href="kontakt.html" data-i18n="nav_kontakt"></a></li>
     </ul>
   </nav>
   <div class="header-actions">
     <div class="lang-switch">
-      <button id="btn-de" class="active" onclick="setLang('de')">DE</button>
-      <button id="btn-fr" onclick="setLang('fr')">FR</button>
+      <select id="lang-select" onchange="setLang(this.value)">
+        <option value="de">Deutsch</option>
+        <option value="fr">Français</option>
+        <option value="en">English</option>
+        <option value="it">Italiano</option>
+        <option value="pt">Português</option>
+      </select>
     </div>
-    <button class="btn-eltern" onclick="openModal()">
-      <span data-lang="de">Elternbereich</span><span data-lang="fr">Espace parents</span>
-    </button>
   </div>
 </header>
 
 <div class="page-header">
-  <h1><span data-lang="de">Anmeldung / Warteliste</span><span data-lang="fr">Inscription / Liste d'attente</span></h1>
+  <h1 data-i18n="anmeldung_title"></h1>
 </div>
 
 <main>
   <section>
-    <p style="margin-bottom:1.2rem;max-width:520px;">
-      <span data-lang="de">Die Aufnahme in die Spielgruppe erfolgt in der Reihenfolge der eingegangenen, unterzeichneten Anmeldungen und wird vor Beginn des ersten Spielgruppentages schriftlich bestätigt.</span>
-      <span data-lang="fr">L'admission au groupe de jeu se fait dans l'ordre des inscriptions signées reçues et sera confirmée par écrit avant le début du premier jour de groupe de jeu.</span>
-    </p>
-    <form onsubmit="event.preventDefault(); alert('Demo-Formular – keine echte Übermittlung.');">
+    <p style="margin-bottom:1.2rem;max-width:520px;" data-i18n="anmeldung_intro"></p>
+    <form id="anmeldung-form" novalidate>
       <div>
-        <label data-lang="de">Name und Vorname des Kindes</label><label data-lang="fr">Nom et prénom de l'enfant</label>
-        <input type="text" required>
+        <label data-i18n="anmeldung_child_name"></label>
+        <input type="text" id="child-name" data-validate="letters" required>
+        <div class="field-error" data-i18n="anmeldung_letters_error"></div>
       </div>
       <div>
-        <label data-lang="de">Geburtsdatum</label><label data-lang="fr">Date de naissance</label>
-        <input type="date" required>
+        <label data-i18n="anmeldung_birthdate"></label>
+        <input type="date" id="birthdate" required>
+        <div class="field-error" data-i18n="anmeldung_birthdate_error"></div>
+      </div>
+      <div class="autocomplete-wrap">
+        <label data-i18n="anmeldung_nationality"></label>
+        <input type="text" id="nationality" list="country-list" autocomplete="off" required>
+        <datalist id="country-list"></datalist>
       </div>
       <div>
-        <label data-lang="de">Nationalität</label><label data-lang="fr">Nationalité</label>
-        <input type="text">
+        <label data-i18n="anmeldung_mother_tongue"></label>
+        <input type="text" id="mother-tongue" data-validate="letters" required>
+        <div class="field-error" data-i18n="anmeldung_letters_error"></div>
       </div>
       <div>
-        <label data-lang="de">Muttersprache</label><label data-lang="fr">Langue maternelle</label>
-        <input type="text">
+        <label data-i18n="anmeldung_allergies"></label>
+        <input type="text" id="allergies" data-validate="letters-optional">
+        <div class="field-error" data-i18n="anmeldung_letters_error"></div>
       </div>
       <div>
-        <label data-lang="de">Allergien</label><label data-lang="fr">Allergies</label>
-        <input type="text">
+        <label data-i18n="anmeldung_health_info"></label>
+        <textarea rows="2" id="health-info" data-validate="text-optional"></textarea>
+        <div class="field-error" data-i18n="anmeldung_letters_error"></div>
       </div>
       <div>
-        <label data-lang="de">Andere gesundheitliche Informationen</label><label data-lang="fr">Autres informations de santé</label>
-        <textarea rows="2"></textarea>
+        <label data-i18n="anmeldung_siblings"></label>
+        <input type="text" id="siblings">
       </div>
       <div>
-        <label data-lang="de">Namen und Alter der Geschwister</label><label data-lang="fr">Noms et âges des frères et sœurs</label>
-        <input type="text">
+        <label data-i18n="anmeldung_parent_name"></label>
+        <input type="text" id="parent-name" required>
+      </div>
+      <div class="autocomplete-wrap">
+        <label data-i18n="anmeldung_street"></label>
+        <input type="text" id="street" autocomplete="off" required>
+        <div class="autocomplete-list" id="street-suggestions"></div>
+        <div class="field-hint" data-i18n="anmeldung_street_hint"></div>
       </div>
       <div>
-        <label data-lang="de">Name und Vorname des Vaters oder der Mutter</label><label data-lang="fr">Nom et prénom du père ou de la mère</label>
-        <input type="text" required>
+        <label data-i18n="anmeldung_plz_ort"></label>
+        <input type="text" id="plz-ort" required>
       </div>
       <div>
-        <label data-lang="de">Strasse</label><label data-lang="fr">Rue</label>
-        <input type="text" required>
-      </div>
-      <div>
-        <label data-lang="de">PLZ, Ort</label><label data-lang="fr">NPA, localité</label>
-        <input type="text" required>
-      </div>
-      <div>
-        <label data-lang="de">Wer bringt / holt das Kind</label><label data-lang="fr">Qui amène / récupère l'enfant</label>
-        <input type="text">
+        <label data-i18n="anmeldung_who_brings"></label>
+        <div class="radio-group">
+          <label><input type="radio" name="who-brings" value="vater" required style="width:auto;display:inline;"><span data-i18n="anmeldung_who_vater"></span></label>
+          <label><input type="radio" name="who-brings" value="mutter" style="width:auto;display:inline;"><span data-i18n="anmeldung_who_mutter"></span></label>
+          <label><input type="radio" name="who-brings" value="andere" style="width:auto;display:inline;"><span data-i18n="anmeldung_who_andere"></span></label>
+        </div>
+        <input type="text" id="who-brings-other" style="display:none;margin-top:.5rem;" data-i18n-placeholder="anmeldung_who_other_ph">
       </div>
       <div>
         <label>E-Mail</label>
-        <input type="email" required>
+        <input type="email" id="email" required>
+        <div class="field-error" data-i18n="anmeldung_email_error"></div>
       </div>
       <div>
-        <label data-lang="de">Telefon Nr.</label><label data-lang="fr">N° de téléphone</label>
-        <input type="tel">
+        <label data-i18n="anmeldung_phone"></label>
+        <input type="tel" id="phone" required>
+        <div class="field-error" data-i18n="anmeldung_phone_error"></div>
       </div>
       <div>
-        <label data-lang="de">Mutter Tel. Nr.</label><label data-lang="fr">N° de téléphone de la mère</label>
-        <input type="tel">
+        <label data-i18n="anmeldung_phone_mother"></label>
+        <input type="tel" id="phone-mother">
+        <div class="field-error" data-i18n="anmeldung_phone_error"></div>
       </div>
       <div>
-        <label data-lang="de">Vater Tel. Nr.</label><label data-lang="fr">N° de téléphone du père</label>
-        <input type="tel">
+        <label data-i18n="anmeldung_phone_father"></label>
+        <input type="tel" id="phone-father">
+        <div class="field-error" data-i18n="anmeldung_phone_error"></div>
       </div>
       <div>
-        <label data-lang="de">Spielgruppenbesuche pro Woche</label><label data-lang="fr">Fréquentation par semaine</label>
+        <label data-i18n="anmeldung_frequency"></label>
         <select>
-          <option data-de="1x pro Woche" data-fr="1x par semaine">1x pro Woche</option>
-          <option data-de="2x pro Woche" data-fr="2x par semaine">2x pro Woche</option>
-          <option data-de="3x pro Woche" data-fr="3x par semaine">3x pro Woche</option>
-          <option data-de="4x pro Woche" data-fr="4x par semaine">4x pro Woche</option>
+          <option data-i18n="anmeldung_freq_1"></option>
+          <option data-i18n="anmeldung_freq_2"></option>
+          <option data-i18n="anmeldung_freq_3"></option>
+          <option data-i18n="anmeldung_freq_4"></option>
         </select>
       </div>
       <div>
-        <label data-lang="de">Bitte alle für Sie möglichen Termine ankreuzen:</label><label data-lang="fr">Veuillez cocher tous les jours qui vous conviennent :</label>
+        <label data-i18n="anmeldung_days_label"></label>
         <div class="weekday-check">
-          <label><input type="checkbox" style="width:auto;display:inline;"> <span data-lang="de">Dienstag 9.00–11.30 Uhr</span><span data-lang="fr">Mardi 9h00–11h30</span></label>
-          <label><input type="checkbox" style="width:auto;display:inline;"> <span data-lang="de">Mittwoch 9.00–11.30 Uhr</span><span data-lang="fr">Mercredi 9h00–11h30</span></label>
-          <label><input type="checkbox" style="width:auto;display:inline;"> <span data-lang="de">Donnerstag 9.00–11.30 Uhr</span><span data-lang="fr">Jeudi 9h00–11h30</span></label>
-          <label><input type="checkbox" style="width:auto;display:inline;"> <span data-lang="de">Freitag 9.00–11.30 Uhr</span><span data-lang="fr">Vendredi 9h00–11h30</span></label>
+          <label><input type="checkbox" style="width:auto;display:inline;"> <span data-i18n="anmeldung_day_di"></span></label>
+          <label><input type="checkbox" style="width:auto;display:inline;"> <span data-i18n="anmeldung_day_mi"></span></label>
+          <label><input type="checkbox" style="width:auto;display:inline;"> <span data-i18n="anmeldung_day_do"></span></label>
+          <label><input type="checkbox" style="width:auto;display:inline;"> <span data-i18n="anmeldung_day_fr"></span></label>
         </div>
       </div>
       <label class="consent">
         <input type="checkbox" required style="width:auto;display:inline;">
-        <span data-lang="de">Mit der Unterzeichnung dieser Anmeldung akzeptiere ich die <a href="vertragsbedingungen.html">Vertragsbedingungen</a> der Spielgruppe Rägiräupli sowie die <a href="datenschutz.html">Datenschutzerklärung</a>.</span>
-        <span data-lang="fr">En signant cette inscription, j'accepte les <a href="vertragsbedingungen.html">conditions contractuelles</a> du Groupe de jeu Rägiräupli ainsi que la <a href="datenschutz.html">déclaration de confidentialité</a>.</span>
+        <span data-i18n-html="anmeldung_consent_html"></span>
       </label>
-      <button type="submit"><span data-lang="de">Anfrage senden</span><span data-lang="fr">Envoyer la demande</span></button>
+      <button type="submit"><span data-i18n="anmeldung_submit"></span></button>
     </form>
   </section>
 </main>
@@ -133,47 +148,24 @@
 <footer>
   <div class="footer-grid">
     <div>
-      <h3 data-lang="de">Spielgruppe Rägiräupli</h3><h3 data-lang="fr">Groupe de jeu Rägiräupli</h3>
-      <p data-lang="de">Watterstrasse 17, 8105 Regensdorf</p>
-      <p data-lang="fr">Watterstrasse 17, 8105 Regensdorf</p>
+      <h3 data-i18n="brand_name"></h3>
+      <p data-i18n="footer_address"></p>
     </div>
     <div>
-      <h3 data-lang="de">Rechtliches</h3><h3 data-lang="fr">Mentions légales</h3>
-      <p><a href="impressum.html" data-lang="de">Impressum</a><a href="impressum.html" data-lang="fr">Mentions légales</a></p>
-      <p><a href="datenschutz.html" data-lang="de">Datenschutzerklärung</a><a href="datenschutz.html" data-lang="fr">Déclaration de confidentialité</a></p>
-      <p><a href="vertragsbedingungen.html" data-lang="de">Vertragsbedingungen</a><a href="vertragsbedingungen.html" data-lang="fr">Conditions contractuelles</a></p>
+      <h3 data-i18n="footer_legal"></h3>
+      <p><a href="impressum.html" data-i18n="footer_impressum"></a></p>
+      <p><a href="datenschutz.html" data-i18n="footer_datenschutz"></a></p>
+      <p><a href="vertragsbedingungen.html" data-i18n="footer_vertrag"></a></p>
     </div>
     <div>
-      <h3 data-lang="de">Kontakt</h3><h3 data-lang="fr">Contact</h3>
-      <p data-lang="de">Telefon: 076 249 36 36<br>alessia.spielgruppe@outlook.ch</p>
-      <p data-lang="fr">Téléphone: 076 249 36 36<br>alessia.spielgruppe@outlook.ch</p>
+      <h3 data-i18n="footer_kontakt"></h3>
+      <p><span data-i18n="footer_telefon"></span>: 076 249 36 36<br>alessia.spielgruppe@outlook.com</p>
     </div>
   </div>
-  <div class="copyright">© 2026 Spielgruppe Rägiräupli · <span data-lang="de">Alle Rechte vorbehalten</span><span data-lang="fr">Tous droits réservés</span></div>
+  <div class="copyright">© 2026 <span data-i18n="brand_name"></span> · <span data-i18n="footer_rechte"></span></div>
 </footer>
 
-<div class="modal-overlay" id="modal">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal()">&times;</button>
-    <h2><span data-lang="de">Elternbereich</span><span data-lang="fr">Espace parents</span><span class="badge-demo">DEMO</span></h2>
-    <form onsubmit="event.preventDefault(); alert('Demo-Login – im echten System folgt hier ein gesicherter Bereich mit Fotos und Dokumenten.');" style="box-shadow:none;padding:0;margin-top:1rem;">
-      <div>
-        <label>E-Mail</label>
-        <input type="email" required>
-      </div>
-      <div>
-        <label data-lang="de">Passwort</label><label data-lang="fr">Mot de passe</label>
-        <input type="password" required>
-      </div>
-      <button type="submit"><span data-lang="de">Anmelden</span><span data-lang="fr">Connexion</span></button>
-    </form>
-    <div class="modal-note">
-      <span data-lang="de">Hinweis: Dies ist ein reines Layout-Muster. Der echte Elternbereich benötigt ein Backend mit sicherem Login, verschlüsselter Dateiablage und Zugriff nur nach schriftlicher Foto-Einwilligung.</span>
-      <span data-lang="fr">Remarque : ceci est une maquette. L'espace parents réel nécessite un backend avec connexion sécurisée, stockage chiffré et accès uniquement après consentement écrit pour les photos.</span>
-    </div>
-  </div>
-</div>
-
+<script src="translations.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

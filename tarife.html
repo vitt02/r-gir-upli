@@ -6,104 +6,77 @@
 <title>Öffnungszeiten &amp; Tarife - Spielgruppe Rägiräupli</title>
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-i18n-title="tarife_title_page">
 
 <header>
-  <a href="index.html" class="logo"><img src="Logo.jpeg" alt="Spielgruppe Rägiräupli" class="logo-img"><span data-lang="de">Spielgruppe Rägiräupli</span><span data-lang="fr">Groupe de jeu Rägiräupli</span></a>
+  <a href="index.html" class="logo"><img src="Logo.png" alt="Spielgruppe Rägiräupli" class="logo-img"><span data-i18n="brand_name"></span></a>
   <nav>
     <ul>
-      <li><a href="leitbild.html" data-lang="de">Leitbild</a><a href="leitbild.html" data-lang="fr">Philosophie</a></li>
-      <li><a href="konzept.html" data-lang="de">Konzept</a><a href="konzept.html" data-lang="fr">Concept</a></li>
-      <li><a href="team.html" data-lang="de">Team</a><a href="team.html" data-lang="fr">Équipe</a></li>
-      <li><a href="tarife.html" class="current" data-lang="de">Öffnungszeiten &amp; Tarife</a><a href="tarife.html" class="current" data-lang="fr">Horaires &amp; Tarifs</a></li>
-      <li><a href="anmeldung.html" data-lang="de">Anmeldung</a><a href="anmeldung.html" data-lang="fr">Inscription</a></li>
-      <li><a href="kontakt.html" data-lang="de">Kontakt</a><a href="kontakt.html" data-lang="fr">Contact</a></li>
+      <li><a href="leitbild.html" data-i18n="nav_leitbild"></a></li>
+      <li><a href="konzept.html" data-i18n="nav_konzept"></a></li>
+      <li><a href="team.html" data-i18n="nav_team"></a></li>
+      <li><a href="tarife.html" class="current" data-i18n="nav_tarife"></a></li>
+      <li><a href="anmeldung.html" data-i18n="nav_anmeldung"></a></li>
+      <li><a href="kontakt.html" data-i18n="nav_kontakt"></a></li>
     </ul>
   </nav>
   <div class="header-actions">
     <div class="lang-switch">
-      <button id="btn-de" class="active" onclick="setLang('de')">DE</button>
-      <button id="btn-fr" onclick="setLang('fr')">FR</button>
+      <select id="lang-select" onchange="setLang(this.value)">
+        <option value="de">Deutsch</option>
+        <option value="fr">Français</option>
+        <option value="en">English</option>
+        <option value="it">Italiano</option>
+        <option value="pt">Português</option>
+      </select>
     </div>
-    <button class="btn-eltern" onclick="openModal()">
-      <span data-lang="de">Elternbereich</span><span data-lang="fr">Espace parents</span>
-    </button>
   </div>
 </header>
 
 <div class="page-header">
-  <h1><span data-lang="de">Öffnungszeiten &amp; Tarife</span><span data-lang="fr">Horaires &amp; Tarifs</span></h1>
+  <h1 data-i18n="tarife_title"></h1>
 </div>
 
 <main>
   <section>
-    <p style="margin-bottom:1rem;">
-      <span data-lang="de">Dienstag – Freitag, 09:00 – 11:30 Uhr (ausser an Feiertagen)</span>
-      <span data-lang="fr">Mardi – vendredi, 09h00 – 11h30 (sauf jours fériés)</span>
-    </p>
+    <p style="margin-bottom:1rem;" data-i18n="tarife_hours"></p>
     <table class="tarife">
       <thead>
         <tr>
-          <th data-lang="de">Leistung</th><th data-lang="fr">Prestation</th>
-          <th data-lang="de">Preis</th><th data-lang="fr">Prix</th>
+          <th data-i18n="tarife_th_leistung"></th>
+          <th data-i18n="tarife_th_preis"></th>
         </tr>
       </thead>
       <tbody>
-        <tr><td data-lang="de">Betreuungsmorgen inkl. z'Nüni</td><td data-lang="fr">Matinée de garde, collation (z'Nüni) comprise</td><td>CHF 25.–</td></tr>
-        <tr><td data-lang="de">Einmaliger Spielwaren-/Bastelmaterialbeitrag pro Jahr</td><td data-lang="fr">Contribution unique annuelle pour le matériel de jeu/bricolage</td><td>CHF 20.–</td></tr>
+        <tr><td data-i18n="tarife_row1_label"></td><td>CHF 25.–</td></tr>
+        <tr><td data-i18n="tarife_row2_label"></td><td>CHF 20.–</td></tr>
       </tbody>
     </table>
-    <p style="font-size:.85rem;color:#777;margin-top:.6rem;">
-      <span data-lang="de">Der Beitrag wird jeweils einen Monat im Voraus erhoben. Während der Schulferien der Gemeinde Regensdorf bleibt die Spielgruppe geschlossen und kostenlos.</span>
-      <span data-lang="fr">La contribution est perçue chaque mois à l'avance. Pendant les vacances scolaires de la commune de Regensdorf, le groupe de jeu est fermé et gratuit.</span>
-    </p>
+    <p style="font-size:.85rem;color:#777;margin-top:.6rem;" data-i18n="tarife_note"></p>
   </section>
 </main>
 
 <footer>
   <div class="footer-grid">
     <div>
-      <h3 data-lang="de">Spielgruppe Rägiräupli</h3><h3 data-lang="fr">Groupe de jeu Rägiräupli</h3>
-      <p data-lang="de">Watterstrasse 17, 8105 Regensdorf</p>
-      <p data-lang="fr">Watterstrasse 17, 8105 Regensdorf</p>
+      <h3 data-i18n="brand_name"></h3>
+      <p data-i18n="footer_address"></p>
     </div>
     <div>
-      <h3 data-lang="de">Rechtliches</h3><h3 data-lang="fr">Mentions légales</h3>
-      <p><a href="impressum.html" data-lang="de">Impressum</a><a href="impressum.html" data-lang="fr">Mentions légales</a></p>
-      <p><a href="datenschutz.html" data-lang="de">Datenschutzerklärung</a><a href="datenschutz.html" data-lang="fr">Déclaration de confidentialité</a></p>
-      <p><a href="vertragsbedingungen.html" data-lang="de">Vertragsbedingungen</a><a href="vertragsbedingungen.html" data-lang="fr">Conditions contractuelles</a></p>
+      <h3 data-i18n="footer_legal"></h3>
+      <p><a href="impressum.html" data-i18n="footer_impressum"></a></p>
+      <p><a href="datenschutz.html" data-i18n="footer_datenschutz"></a></p>
+      <p><a href="vertragsbedingungen.html" data-i18n="footer_vertrag"></a></p>
     </div>
     <div>
-      <h3 data-lang="de">Kontakt</h3><h3 data-lang="fr">Contact</h3>
-      <p data-lang="de">Telefon: 076 249 36 36<br>alessia.spielgruppe@outlook.ch</p>
-      <p data-lang="fr">Téléphone: 076 249 36 36<br>alessia.spielgruppe@outlook.ch</p>
+      <h3 data-i18n="footer_kontakt"></h3>
+      <p><span data-i18n="footer_telefon"></span>: 076 249 36 36<br>alessia.spielgruppe@outlook.com</p>
     </div>
   </div>
-  <div class="copyright">© 2026 Spielgruppe Rägiräupli · <span data-lang="de">Alle Rechte vorbehalten</span><span data-lang="fr">Tous droits réservés</span></div>
+  <div class="copyright">© 2026 <span data-i18n="brand_name"></span> · <span data-i18n="footer_rechte"></span></div>
 </footer>
 
-<div class="modal-overlay" id="modal">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal()">&times;</button>
-    <h2><span data-lang="de">Elternbereich</span><span data-lang="fr">Espace parents</span><span class="badge-demo">DEMO</span></h2>
-    <form onsubmit="event.preventDefault(); alert('Demo-Login – im echten System folgt hier ein gesicherter Bereich mit Fotos und Dokumenten.');" style="box-shadow:none;padding:0;margin-top:1rem;">
-      <div>
-        <label>E-Mail</label>
-        <input type="email" required>
-      </div>
-      <div>
-        <label data-lang="de">Passwort</label><label data-lang="fr">Mot de passe</label>
-        <input type="password" required>
-      </div>
-      <button type="submit"><span data-lang="de">Anmelden</span><span data-lang="fr">Connexion</span></button>
-    </form>
-    <div class="modal-note">
-      <span data-lang="de">Hinweis: Dies ist ein reines Layout-Muster. Der echte Elternbereich benötigt ein Backend mit sicherem Login, verschlüsselter Dateiablage und Zugriff nur nach schriftlicher Foto-Einwilligung.</span>
-      <span data-lang="fr">Remarque : ceci est une maquette. L'espace parents réel nécessite un backend avec connexion sécurisée, stockage chiffré et accès uniquement après consentement écrit pour les photos.</span>
-    </div>
-  </div>
-</div>
-
+<script src="translations.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
