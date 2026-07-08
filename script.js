@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function(){
     input.addEventListener('input', function(){ checkPatternField(input); });
   });
 
-  // Birthdate: must correspond to an age between 2.5 and 6 years
+  // Birthdate: must correspond to an age between 2.5 and 4 years
   var birthdate = document.getElementById('birthdate');
   function checkBirthdate(){
     if(!birthdate) return true;
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function(){
       var dob = new Date(birthdate.value + 'T00:00:00');
       if(!isNaN(dob.getTime())){
         var ageYears = (Date.now() - dob.getTime()) / (1000 * 60 * 60 * 24 * 365.25);
-        ok = ageYears >= 2.5 && ageYears <= 6;
+        ok = ageYears >= 2.5 && ageYears <= 4;
       }
     }
     return showError(birthdate, !ok);
@@ -139,6 +139,13 @@ document.addEventListener('DOMContentLoaded', function(){
   // Wer bringt/holt das Kind -> conditional "Andere" text field
   var whoBringsOther = document.getElementById('who-brings-other');
   var whoBringsRadios = document.querySelectorAll('input[name="who-brings"]');
+  function checkWhoBringsOther(){
+    if(!whoBringsOther) return true;
+    if(!whoBringsOther.required) return showError(whoBringsOther, false);
+    var v = whoBringsOther.value.trim();
+    var ok = v !== '' && LETTERS.test(v);
+    return showError(whoBringsOther, !ok);
+  }
   whoBringsRadios.forEach(function(radio){
     radio.addEventListener('change', function(){
       var checked = document.querySelector('input[name="who-brings"]:checked');
@@ -147,9 +154,11 @@ document.addEventListener('DOMContentLoaded', function(){
         whoBringsOther.style.display = isOther ? 'block' : 'none';
         whoBringsOther.required = !!isOther;
         if(!isOther) whoBringsOther.value = '';
+        checkWhoBringsOther();
       }
     });
   });
+  if(whoBringsOther) whoBringsOther.addEventListener('input', checkWhoBringsOther);
 
   // Nationalität: searchable country datalist, refreshed on language change
   var countryList = document.getElementById('country-list');
@@ -173,19 +182,19 @@ document.addEventListener('DOMContentLoaded', function(){
   var debounceTimer = null;
   var activeController = null;
 
-  function titleCase(s){
-    return s.replace(/\b\w/g, function(c){ return c.toUpperCase(); });
-  }
-
   function renderSuggestions(results){
     suggestionBox.innerHTML = '';
     var items = [];
     (results || []).forEach(function(r){
-      var detail = r && r.attrs && r.attrs.detail;
-      if(!detail) return;
-      var m = detail.match(/^(.*)\s(\d{4})\s(.+)$/);
+      // Use the "label" field (clean display text, e.g. "Im Dreispitz 12 <b>8105</b> Regensdorf") -
+      // "detail" is an internal search-matching string that also contains BFS numbers and
+      // country/canton codes, which is what caused the garbled address before.
+      var label = r && r.attrs && r.attrs.label;
+      if(!label) return;
+      var text = label.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+      var m = text.match(/^(.*?)\s(\d{4})\s([A-Za-zÀ-ÖØ-öø-ÿ.'\- ]+)$/);
       if(!m) return;
-      items.push({street: titleCase(m[1].trim()), plz: m[2], ort: titleCase(m[3].trim())});
+      items.push({street: m[1].trim(), plz: m[2], ort: m[3].trim()});
     });
     if(!items.length){ suggestionBox.classList.remove('show'); return; }
     items.forEach(function(item){
@@ -244,7 +253,7 @@ document.addEventListener('DOMContentLoaded', function(){
     if(!checkPhoneFather()) valid = false;
 
     // generic required fields without a bilingual message box
-    ['nationality', 'parent-name', 'street', 'plz-ort'].forEach(function(id){
+    ['nationality', 'street', 'plz-ort'].forEach(function(id){
       var el = document.getElementById(id);
       if(el){
         var ok = el.value.trim() !== '';
@@ -253,7 +262,7 @@ document.addEventListener('DOMContentLoaded', function(){
       }
     });
     if(whoBringsRadios.length && !document.querySelector('input[name="who-brings"]:checked')) valid = false;
-    if(whoBringsOther && whoBringsOther.required && whoBringsOther.value.trim() === '') valid = false;
+    if(!checkWhoBringsOther()) valid = false;
 
     if(!valid) return;
     alert(t('anmeldung_demo_alert'));

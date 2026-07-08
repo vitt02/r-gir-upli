@@ -77,7 +77,8 @@
       </div>
       <div>
         <label data-i18n="anmeldung_parent_name"></label>
-        <input type="text" id="parent-name" required>
+        <input type="text" id="parent-name" data-validate="letters" required>
+        <div class="field-error" data-i18n="anmeldung_letters_error"></div>
       </div>
       <div class="autocomplete-wrap">
         <label data-i18n="anmeldung_street"></label>
@@ -97,6 +98,7 @@
           <label><input type="radio" name="who-brings" value="andere" style="width:auto;display:inline;"><span data-i18n="anmeldung_who_andere"></span></label>
         </div>
         <input type="text" id="who-brings-other" style="display:none;margin-top:.5rem;" data-i18n-placeholder="anmeldung_who_other_ph">
+        <div class="field-error" data-i18n="anmeldung_letters_error"></div>
       </div>
       <div>
         <label>E-Mail</label>
