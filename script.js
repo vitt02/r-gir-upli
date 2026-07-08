@@ -1,8 +1,8 @@
-// Supported languages. To add a new one later (e.g. "sq" for Albanian):
+// Supported languages. To add a new one later:
 // 1) add its dictionary to I18N in translations.js
 // 2) add it here
 // 3) add an <option> for it in the language <select> on every page
-var LANGUAGES = ['de', 'fr', 'en', 'it', 'pt'];
+var LANGUAGES = ['de', 'fr', 'en', 'it', 'pt', 'es', 'sq', 'tr', 'sh'];
 
 function currentLang(){
   var saved = localStorage.getItem('raegiraeupli-lang');
