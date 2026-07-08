@@ -52,6 +52,14 @@ function openLightbox(src, alt){
 }
 function closeLightbox(){ document.getElementById('lightbox').classList.remove('open'); }
 
+function toggleNav(){
+  var nav = document.getElementById('site-nav');
+  var btn = document.querySelector('.nav-toggle');
+  if(!nav) return;
+  var isOpen = nav.classList.toggle('open');
+  if(btn) btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+}
+
 document.addEventListener('DOMContentLoaded', function(){
   setLang(currentLang());
 
@@ -60,6 +68,17 @@ document.addEventListener('DOMContentLoaded', function(){
       if(e.target === this) overlay.classList.remove('open');
     });
   });
+
+  var siteNav = document.getElementById('site-nav');
+  var navToggle = document.querySelector('.nav-toggle');
+  if(siteNav && navToggle){
+    document.addEventListener('click', function(e){
+      if(siteNav.classList.contains('open') && !siteNav.contains(e.target) && e.target !== navToggle && !navToggle.contains(e.target)){
+        siteNav.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
 });
 
 // ---- Anmeldung form: validation, autocomplete, conditional fields ----

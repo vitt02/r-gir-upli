@@ -10,7 +10,10 @@
 
 <header>
   <a href="index.html" class="logo"><img src="Logo.png" alt="Spielgruppe Rägiräupli" class="logo-img"><span data-i18n="brand_name"></span></a>
-  <nav>
+  <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav id="site-nav">
     <ul>
       <li><a href="leitbild.html" data-i18n="nav_leitbild"></a></li>
       <li><a href="konzept.html" data-i18n="nav_konzept"></a></li>
@@ -93,9 +96,9 @@
       <div>
         <label data-i18n="anmeldung_who_brings"></label>
         <div class="radio-group">
-          <label><input type="radio" name="who-brings" value="vater" required style="width:auto;display:inline;"><span data-i18n="anmeldung_who_vater"></span></label>
-          <label><input type="radio" name="who-brings" value="mutter" style="width:auto;display:inline;"><span data-i18n="anmeldung_who_mutter"></span></label>
-          <label><input type="radio" name="who-brings" value="andere" style="width:auto;display:inline;"><span data-i18n="anmeldung_who_andere"></span></label>
+          <label><input type="radio" name="who-brings" value="vater" required><span data-i18n="anmeldung_who_vater"></span></label>
+          <label><input type="radio" name="who-brings" value="mutter"><span data-i18n="anmeldung_who_mutter"></span></label>
+          <label><input type="radio" name="who-brings" value="andere"><span data-i18n="anmeldung_who_andere"></span></label>
         </div>
         <input type="text" id="who-brings-other" style="display:none;margin-top:.5rem;" data-i18n-placeholder="anmeldung_who_other_ph">
         <div class="field-error" data-i18n="anmeldung_letters_error"></div>
@@ -132,14 +135,14 @@
       <div>
         <label data-i18n="anmeldung_days_label"></label>
         <div class="weekday-check">
-          <label><input type="checkbox" style="width:auto;display:inline;"> <span data-i18n="anmeldung_day_di"></span></label>
-          <label><input type="checkbox" style="width:auto;display:inline;"> <span data-i18n="anmeldung_day_mi"></span></label>
-          <label><input type="checkbox" style="width:auto;display:inline;"> <span data-i18n="anmeldung_day_do"></span></label>
-          <label><input type="checkbox" style="width:auto;display:inline;"> <span data-i18n="anmeldung_day_fr"></span></label>
+          <label><input type="checkbox"> <span data-i18n="anmeldung_day_di"></span></label>
+          <label><input type="checkbox"> <span data-i18n="anmeldung_day_mi"></span></label>
+          <label><input type="checkbox"> <span data-i18n="anmeldung_day_do"></span></label>
+          <label><input type="checkbox"> <span data-i18n="anmeldung_day_fr"></span></label>
         </div>
       </div>
       <label class="consent">
-        <input type="checkbox" required style="width:auto;display:inline;">
+        <input type="checkbox" required>
         <span data-i18n-html="anmeldung_consent_html"></span>
       </label>
       <button type="submit"><span data-i18n="anmeldung_submit"></span></button>

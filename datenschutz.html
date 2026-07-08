@@ -10,7 +10,10 @@
 
 <header>
   <a href="index.html" class="logo"><img src="Logo.png" alt="Spielgruppe Rägiräupli" class="logo-img"><span data-i18n="brand_name"></span></a>
-  <nav>
+  <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav id="site-nav">
     <ul>
       <li><a href="leitbild.html" data-i18n="nav_leitbild"></a></li>
       <li><a href="konzept.html" data-i18n="nav_konzept"></a></li>
