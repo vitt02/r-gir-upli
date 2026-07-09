@@ -547,8 +547,8 @@ footer .copyright{
     flex-basis:100%;
   }
   header nav.open{display:block;}
-  nav ul{flex-direction:column;gap:0;width:100%;}
+  nav ul{flex-direction:column;gap:.4rem;width:100%;}
   nav li{width:100%;}
-  nav a{display:block;padding:.7rem 0;}
+  nav a{display:block;padding:.85rem .8rem;}
   .kontakt-grid{grid-template-columns:1fr;}
 }
