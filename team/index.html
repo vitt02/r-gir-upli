@@ -3,24 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Öffnungszeiten &amp; Tarife - Spielgruppe Rägiräupli</title>
-<link rel="stylesheet" href="style.css">
+<title>Team - Spielgruppe Rägiräupli</title>
+<link rel="stylesheet" href="../style.css">
 </head>
-<body data-i18n-title="tarife_title_page">
+<body data-i18n-title="team_title_page">
 
 <header>
-  <a href="index.html" class="logo"><img src="Logo.png" alt="Spielgruppe Rägiräupli" class="logo-img"><span data-i18n="brand_name"></span></a>
+  <a href="../" class="logo"><img src="../Logo.png" alt="Spielgruppe Rägiräupli" class="logo-img"><span data-i18n="brand_name"></span></a>
   <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
   <nav id="site-nav">
     <ul>
-      <li><a href="leitbild.html" data-i18n="nav_leitbild"></a></li>
-      <li><a href="konzept.html" data-i18n="nav_konzept"></a></li>
-      <li><a href="team.html" data-i18n="nav_team"></a></li>
-      <li><a href="tarife.html" class="current" data-i18n="nav_tarife"></a></li>
-      <li><a href="anmeldung.html" data-i18n="nav_anmeldung"></a></li>
-      <li><a href="kontakt.html" data-i18n="nav_kontakt"></a></li>
+      <li><a href="../leitbild/" data-i18n="nav_leitbild"></a></li>
+      <li><a href="../konzept/" data-i18n="nav_konzept"></a></li>
+      <li><a href="../team/" class="current" data-i18n="nav_team"></a></li>
+      <li><a href="../tarife/" data-i18n="nav_tarife"></a></li>
+      <li><a href="../anmeldung/" data-i18n="nav_anmeldung"></a></li>
+      <li><a href="../kontakt/" data-i18n="nav_kontakt"></a></li>
     </ul>
   </nav>
   <div class="header-actions">
@@ -40,29 +40,22 @@
   </div>
 </header>
 
-<div class="page-header page-header-green">
-  <h1 data-i18n="tarife_title"></h1>
+<div class="page-header page-header-yellow">
+  <h1 data-i18n="team_title"></h1>
 </div>
 
 <main>
   <section>
-    <div class="hours-banner">
-      <span class="hours-icon" aria-hidden="true">🕐</span>
-      <p data-i18n="tarife_hours"></p>
+    <div class="profile">
+      <div class="portrait-placeholder" data-i18n="team_portrait_placeholder"></div>
+      <div class="profile-text">
+        <h3>Alessia Polvere</h3>
+        <p data-i18n="team_role"></p>
+        <br>
+        <h4 data-i18n="team_intro_h"></h4>
+        <p class="placeholder-note" data-i18n="team_intro_p"></p>
+      </div>
     </div>
-    <table class="tarife">
-      <thead>
-        <tr>
-          <th data-i18n="tarife_th_leistung"></th>
-          <th data-i18n="tarife_th_preis"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td data-i18n="tarife_row1_label"></td><td>CHF 25.–</td></tr>
-        <tr><td data-i18n="tarife_row2_label"></td><td>CHF 20.–</td></tr>
-      </tbody>
-    </table>
-    <p style="font-size:.85rem;color:#777;margin-top:.6rem;" data-i18n="tarife_note"></p>
   </section>
 </main>
 
@@ -74,9 +67,9 @@
     </div>
     <div>
       <h3 data-i18n="footer_legal"></h3>
-      <p><a href="impressum.html" data-i18n="footer_impressum"></a></p>
-      <p><a href="datenschutz.html" data-i18n="footer_datenschutz"></a></p>
-      <p><a href="vertragsbedingungen.html" data-i18n="footer_vertrag"></a></p>
+      <p><a href="../impressum/" data-i18n="footer_impressum"></a></p>
+      <p><a href="../datenschutz/" data-i18n="footer_datenschutz"></a></p>
+      <p><a href="../vertragsbedingungen/" data-i18n="footer_vertrag"></a></p>
     </div>
     <div>
       <h3 data-i18n="footer_kontakt"></h3>
@@ -91,7 +84,7 @@
   <div class="copyright">© 2026 <span data-i18n="brand_name"></span> · <span data-i18n="footer_rechte"></span></div>
 </footer>
 
-<script src="translations.js"></script>
-<script src="script.js"></script>
+<script src="../translations.js"></script>
+<script src="../script.js"></script>
 </body>
 </html>

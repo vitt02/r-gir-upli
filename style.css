@@ -50,7 +50,7 @@ header{
   color:#fff;
 }
 .logo-img{
-  height:56px;
+  height:68px;
   width:auto;
 }
 .rainbow-text,
@@ -78,22 +78,22 @@ nav a{
 }
 nav a:hover, nav a:focus{border-color:#fff;}
 nav a.current{border-color:#fff;}
-nav a[href="leitbild.html"]:hover, nav a[href="leitbild.html"]:focus,
-nav a[href="konzept.html"]:hover, nav a[href="konzept.html"]:focus,
-nav a[href="team.html"]:hover, nav a[href="team.html"]:focus,
-nav a[href="tarife.html"]:hover, nav a[href="tarife.html"]:focus,
-nav a[href="anmeldung.html"]:hover, nav a[href="anmeldung.html"]:focus,
-nav a[href="kontakt.html"]:hover, nav a[href="kontakt.html"]:focus{
+nav a[href$="leitbild/"]:hover, nav a[href$="leitbild/"]:focus,
+nav a[href$="konzept/"]:hover, nav a[href$="konzept/"]:focus,
+nav a[href$="team/"]:hover, nav a[href$="team/"]:focus,
+nav a[href$="tarife/"]:hover, nav a[href$="tarife/"]:focus,
+nav a[href$="anmeldung/"]:hover, nav a[href$="anmeldung/"]:focus,
+nav a[href$="kontakt/"]:hover, nav a[href$="kontakt/"]:focus{
   border-color:transparent;
   background:#fff;
   border-radius:6px;
 }
-nav a[href="leitbild.html"]:hover, nav a[href="leitbild.html"]:focus{color:#8a3123;}
-nav a[href="konzept.html"]:hover, nav a[href="konzept.html"]:focus{color:var(--c-orange);}
-nav a[href="team.html"]:hover, nav a[href="team.html"]:focus{color:var(--c-yellow);}
-nav a[href="tarife.html"]:hover, nav a[href="tarife.html"]:focus{color:var(--c-green);}
-nav a[href="anmeldung.html"]:hover, nav a[href="anmeldung.html"]:focus{color:var(--c-lightblue);}
-nav a[href="kontakt.html"]:hover, nav a[href="kontakt.html"]:focus{color:var(--c-darkblue);}
+nav a[href$="leitbild/"]:hover, nav a[href$="leitbild/"]:focus{color:var(--c-red);}
+nav a[href$="konzept/"]:hover, nav a[href$="konzept/"]:focus{color:var(--c-orange);}
+nav a[href$="team/"]:hover, nav a[href$="team/"]:focus{color:var(--c-yellow);}
+nav a[href$="tarife/"]:hover, nav a[href$="tarife/"]:focus{color:var(--c-green);}
+nav a[href$="anmeldung/"]:hover, nav a[href$="anmeldung/"]:focus{color:var(--c-lightblue);}
+nav a[href$="kontakt/"]:hover, nav a[href$="kontakt/"]:focus{color:var(--c-darkblue);}
 .header-actions{
   display:flex;
   align-items:center;
@@ -436,6 +436,9 @@ footer .copyright{
   grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
   gap:1.2rem;
   margin-top:1.8rem;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
 }
 .gallery img{
   width:100%;
