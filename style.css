@@ -16,6 +16,12 @@
   --t6:#3465d4;
   --t7:#7c3fae;
   --t8:#d63384;
+  --c-red:#e0503a;
+  --c-orange:#f2a154;
+  --c-yellow:#c99a12;
+  --c-green:#4f9c3e;
+  --c-lightblue:#3aa0e0;
+  --c-darkblue:#26418f;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 body{
@@ -53,7 +59,6 @@ header{
   -webkit-background-clip:text;
   background-clip:text;
   color:transparent;
-  -webkit-text-stroke:.5px rgba(255,255,255,.85);
   text-shadow:0 1px 3px rgba(0,0,0,.15);
   font-weight:800;
 }
@@ -73,6 +78,12 @@ nav a{
 }
 nav a:hover, nav a:focus{border-color:#fff;}
 nav a.current{border-color:#fff;}
+nav a[href="leitbild.html"]:hover, nav a[href="leitbild.html"]:focus{color:var(--c-red);border-color:var(--c-red);}
+nav a[href="konzept.html"]:hover, nav a[href="konzept.html"]:focus{color:var(--c-orange);border-color:var(--c-orange);}
+nav a[href="team.html"]:hover, nav a[href="team.html"]:focus{color:var(--c-yellow);border-color:var(--c-yellow);}
+nav a[href="tarife.html"]:hover, nav a[href="tarife.html"]:focus{color:var(--c-green);border-color:var(--c-green);}
+nav a[href="anmeldung.html"]:hover, nav a[href="anmeldung.html"]:focus{color:var(--c-lightblue);border-color:var(--c-lightblue);}
+nav a[href="kontakt.html"]:hover, nav a[href="kontakt.html"]:focus{color:var(--c-darkblue);border-color:var(--c-darkblue);}
 .header-actions{
   display:flex;
   align-items:center;
@@ -103,6 +114,12 @@ nav a.current{border-color:#fff;}
   padding:2.5rem 1.5rem;
 }
 .page-header h1{font-size:2rem;text-shadow:0 2px 8px rgba(0,0,0,.35);}
+.page-header-red{background:var(--c-red);}
+.page-header-orange{background:var(--c-orange);}
+.page-header-yellow{background:var(--c-yellow);}
+.page-header-green{background:var(--c-green);}
+.page-header-lightblue{background:var(--c-lightblue);}
+.page-header-darkblue{background:var(--c-darkblue);}
 main{
   max-width:1000px;
   margin:0 auto;
@@ -120,20 +137,15 @@ section h2{
 }
 /* When a section's content is a single width-limited card, align the
    heading's left edge with the card instead of the wider <main> column. */
-main section:has(> .card[style*="max-width"]) h2{
+main section:has(> .card[style*="max-width"]) h2,
+main section:has(> .cards.cards-narrow) h2{
   display:block;
   max-width:700px;
   margin-left:auto;
   margin-right:auto;
 }
-main section:nth-of-type(8n+1) h2{color:var(--t1);border-bottom-color:var(--t1);}
-main section:nth-of-type(8n+2) h2{color:var(--t2);border-bottom-color:var(--t2);}
-main section:nth-of-type(8n+3) h2{color:var(--t3);border-bottom-color:var(--t3);}
-main section:nth-of-type(8n+4) h2{color:var(--t4);border-bottom-color:var(--t4);}
-main section:nth-of-type(8n+5) h2{color:var(--t5);border-bottom-color:var(--t5);}
-main section:nth-of-type(8n+6) h2{color:var(--t6);border-bottom-color:var(--t6);}
-main section:nth-of-type(8n+7) h2{color:var(--t7);border-bottom-color:var(--t7);}
-main section:nth-of-type(8n+8) h2{color:var(--t8);border-bottom-color:var(--t8);}
+/* Homepage "Auf einen Blick" heading is black, not orange like Konzept's. */
+#overview-title{color:var(--text);border-bottom-color:var(--text);}
 .teasers{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -152,14 +164,13 @@ main section:nth-of-type(8n+8) h2{color:var(--t8);border-bottom-color:var(--t8);
 }
 .teaser:hover{transform:translateY(-3px);}
 .teaser h3{color:var(--primary-dark);margin-bottom:.4rem;}
-.teasers a:nth-of-type(8n+1) h3{color:var(--t1);}
-.teasers a:nth-of-type(8n+2) h3{color:var(--t2);}
-.teasers a:nth-of-type(8n+3) h3{color:var(--t3);}
-.teasers a:nth-of-type(8n+4) h3{color:var(--t4);}
-.teasers a:nth-of-type(8n+5) h3{color:var(--t5);}
-.teasers a:nth-of-type(8n+6) h3{color:var(--t6);}
-.teasers a:nth-of-type(8n+7) h3{color:var(--t7);}
-.teasers a:nth-of-type(8n+8) h3{color:var(--t8);}
+.teaser{display:flex;flex-direction:column;min-height:158px;}
+.teaser-leitbild h3{color:var(--c-red);}
+.teaser-konzept h3{color:var(--c-orange);}
+.teaser-team h3{color:var(--c-yellow);}
+.teaser-tarife h3{color:var(--c-green);}
+.teaser-anmeldung h3{color:var(--c-lightblue);}
+.teaser-kontakt h3{color:var(--c-darkblue);}
 .cards{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -174,14 +185,16 @@ main section:nth-of-type(8n+8) h2{color:var(--t8);border-bottom-color:var(--t8);
 .card h3{color:var(--secondary);margin-bottom:.5rem;}
 .card ul{margin:.3rem 0 .3rem 1.3rem;}
 .card li{margin-bottom:.3rem;}
-.cards .card:nth-of-type(8n+1) h3{color:var(--t1);}
-.cards .card:nth-of-type(8n+2) h3{color:var(--t2);}
-.cards .card:nth-of-type(8n+3) h3{color:var(--t3);}
-.cards .card:nth-of-type(8n+4) h3{color:var(--t4);}
-.cards .card:nth-of-type(8n+5) h3{color:var(--t5);}
-.cards .card:nth-of-type(8n+6) h3{color:var(--t6);}
-.cards .card:nth-of-type(8n+7) h3{color:var(--t7);}
-.cards .card:nth-of-type(8n+8) h3{color:var(--t8);}
+/* Events mit Eltern cards live only on the (orange) Konzept page. */
+.cards .card h3{color:var(--c-orange);}
+.cards.cards-narrow{
+  max-width:700px;
+  margin:0 auto;
+  grid-template-columns:repeat(2,1fr);
+}
+@media (max-width:600px){
+  .cards.cards-narrow{grid-template-columns:1fr;}
+}
 .card[style*="max-width:700px"] p:nth-of-type(2) strong{color:var(--t1);}
 .card[style*="max-width:700px"] p:nth-of-type(3) strong{color:var(--t2);}
 .card[style*="max-width:700px"] p:nth-of-type(4) strong{color:var(--t3);}
@@ -347,8 +360,8 @@ form button:hover{background:var(--primary-dark);}
   padding:1rem;
 }
 .profile-text{flex:1 1 300px;}
-.profile-text h3{color:var(--secondary);margin-bottom:.2rem;font-size:1.3rem;}
-.profile-text h4{color:var(--primary-dark);margin-bottom:.5rem;}
+.profile-text h3{color:var(--text);font-weight:800;margin-bottom:.2rem;font-size:1.5rem;}
+.profile-text h4{color:var(--text);font-weight:800;margin-bottom:.5rem;font-size:1.1rem;}
 .placeholder-note em{color:#8a6d3f;font-style:italic;}
 .map-placeholder{
   background:#e6ddd0;
@@ -412,6 +425,7 @@ footer .copyright{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
   gap:1.2rem;
+  margin-top:1.8rem;
 }
 .gallery img{
   width:100%;
@@ -443,6 +457,32 @@ footer .copyright{
   top:-.9rem;
   right:-.9rem;
   box-shadow:0 2px 8px rgba(0,0,0,.35);
+}
+.lightbox-nav{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:2.8rem;
+  height:2.8rem;
+  border-radius:50%;
+  background:#fff;
+  border:none;
+  color:var(--text);
+  font-size:1.6rem;
+  line-height:1;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 2px 8px rgba(0,0,0,.35);
+  z-index:1;
+}
+.lightbox-nav:hover{background:var(--primary);color:#fff;}
+.lightbox-prev{left:-1rem;}
+.lightbox-next{right:-1rem;}
+@media (max-width:600px){
+  .lightbox-prev{left:.4rem;}
+  .lightbox-next{right:.4rem;}
 }
 .modal-overlay{
   display:none;

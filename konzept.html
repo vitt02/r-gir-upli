@@ -40,7 +40,7 @@
   </div>
 </header>
 
-<div class="page-header">
+<div class="page-header page-header-orange">
   <h1 data-i18n="konzept_title"></h1>
 </div>
 
@@ -144,7 +144,7 @@
 
   <section>
     <h2 data-i18n="konzept_events_h"></h2>
-    <div class="cards">
+    <div class="cards cards-narrow">
       <div class="card">
         <h3 data-i18n="konzept_events_infoabend_h"></h3>
         <p data-i18n="konzept_events_infoabend_p"></p>
@@ -189,6 +189,8 @@
 <div class="modal-overlay" id="lightbox">
   <div class="lightbox-content">
     <button class="modal-close" onclick="closeLightbox()">&times;</button>
+    <button class="lightbox-nav lightbox-prev" onclick="lightboxPrev()" aria-label="Vorheriges Bild">&#8249;</button>
+    <button class="lightbox-nav lightbox-next" onclick="lightboxNext()" aria-label="Nächstes Bild">&#8250;</button>
     <img id="lightbox-img" src="" alt="">
   </div>
 </div>
