@@ -179,20 +179,45 @@ document.addEventListener('DOMContentLoaded', function(){
   });
   if(whoBringsOther) whoBringsOther.addEventListener('input', checkWhoBringsOther);
 
-  // Nationalität: searchable country datalist, refreshed on language change
-  var countryList = document.getElementById('country-list');
-  function fillCountries(){
-    if(!countryList) return;
+  // Nationalität: custom searchable dropdown. A native <datalist> was used
+  // before, but iOS Safari does not show its suggestion popup reliably, so
+  // we build the same filtered list ourselves (like the street field below).
+  var nationalityInput = document.getElementById('nationality');
+  var nationalityBox = document.getElementById('nationality-suggestions');
+
+  function renderNationalitySuggestions(query){
+    if(!nationalityBox) return;
     var arr = COUNTRIES[currentLang()] || COUNTRIES.de;
-    countryList.innerHTML = '';
-    arr.forEach(function(name){
-      var opt = document.createElement('option');
-      opt.value = name;
-      countryList.appendChild(opt);
+    var q = query.trim().toLowerCase();
+    var matches = q === '' ? arr : arr.filter(function(name){
+      return name.toLowerCase().indexOf(q) !== -1;
+    });
+    nationalityBox.innerHTML = '';
+    if(!matches.length){ nationalityBox.classList.remove('show'); return; }
+    matches.forEach(function(name){
+      var div = document.createElement('div');
+      div.textContent = name;
+      div.addEventListener('click', function(){
+        nationalityInput.value = name;
+        nationalityBox.classList.remove('show');
+        nationalityBox.innerHTML = '';
+      });
+      nationalityBox.appendChild(div);
+    });
+    nationalityBox.classList.add('show');
+  }
+
+  if(nationalityInput && nationalityBox){
+    nationalityInput.addEventListener('input', function(){
+      renderNationalitySuggestions(nationalityInput.value);
+    });
+    nationalityInput.addEventListener('focus', function(){
+      renderNationalitySuggestions(nationalityInput.value);
+    });
+    document.addEventListener('click', function(e){
+      if(e.target !== nationalityInput) nationalityBox.classList.remove('show');
     });
   }
-  fillCountries();
-  document.addEventListener('langchange', fillCountries);
 
   // Strasse: address autocomplete via the free Swiss geo.admin.ch search API
   var streetInput = document.getElementById('street');
@@ -213,7 +238,11 @@ document.addEventListener('DOMContentLoaded', function(){
       var text = label.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
       var m = text.match(/^(.*?)\s(\d{4})\s([A-Za-zÀ-ÖØ-öø-ÿ.'\- ]+)$/);
       if(!m) return;
-      items.push({street: m[1].trim(), plz: m[2], ort: m[3].trim()});
+      // The API uses a literal "#" as a placeholder house number for streets
+      // that have no individually numbered address points (e.g. "Im Dreispitz #").
+      // Showing that verbatim reads like a made-up house number, so drop it.
+      var street = m[1].trim().replace(/\s*#\s*$/, '');
+      items.push({street: street, plz: m[2], ort: m[3].trim()});
     });
     if(!items.length){ suggestionBox.classList.remove('show'); return; }
     items.forEach(function(item){
