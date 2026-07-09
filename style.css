@@ -72,7 +72,7 @@ nav a{
   color:#fff;
   text-decoration:none;
   font-weight:600;
-  padding:.3rem .2rem;
+  padding:.3rem .6rem;
   border-bottom:2px solid transparent;
   transition:border-color .2s;
 }
@@ -87,7 +87,6 @@ nav a[href="kontakt.html"]:hover, nav a[href="kontakt.html"]:focus{
   border-color:transparent;
   background:#fff;
   border-radius:6px;
-  padding:.3rem .6rem;
 }
 nav a[href="leitbild.html"]:hover, nav a[href="leitbild.html"]:focus{color:#8a3123;}
 nav a[href="konzept.html"]:hover, nav a[href="konzept.html"]:focus{color:var(--c-orange);}
