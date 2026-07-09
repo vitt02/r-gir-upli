@@ -6,56 +6,156 @@
 <title>Konzept - Spielgruppe Rägiräupli</title>
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-i18n-title="konzept_title_page">
 
 <header>
-  <a href="index.html" class="logo"><span class="icon">🐛</span> <span data-lang="de">Spielgruppe Rägiräupli</span><span data-lang="fr">Groupe de jeu Rägiräupli</span></a>
-  <nav>
+  <a href="index.html" class="logo"><img src="Logo.png" alt="Spielgruppe Rägiräupli" class="logo-img"><span data-i18n="brand_name"></span></a>
+  <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav id="site-nav">
     <ul>
-      <li><a href="konzept.html" class="current" data-lang="de">Konzept</a><a href="konzept.html" class="current" data-lang="fr">Concept</a></li>
-      <li><a href="team.html" data-lang="de">Team</a><a href="team.html" data-lang="fr">Équipe</a></li>
-      <li><a href="tarife.html" data-lang="de">Öffnungszeiten &amp; Tarife</a><a href="tarife.html" data-lang="fr">Horaires &amp; Tarifs</a></li>
-      <li><a href="anmeldung.html" data-lang="de">Anmeldung</a><a href="anmeldung.html" data-lang="fr">Inscription</a></li>
-      <li><a href="kontakt.html" data-lang="de">Kontakt</a><a href="kontakt.html" data-lang="fr">Contact</a></li>
+      <li><a href="leitbild.html" data-i18n="nav_leitbild"></a></li>
+      <li><a href="konzept.html" class="current" data-i18n="nav_konzept"></a></li>
+      <li><a href="team.html" data-i18n="nav_team"></a></li>
+      <li><a href="tarife.html" data-i18n="nav_tarife"></a></li>
+      <li><a href="anmeldung.html" data-i18n="nav_anmeldung"></a></li>
+      <li><a href="kontakt.html" data-i18n="nav_kontakt"></a></li>
     </ul>
   </nav>
   <div class="header-actions">
     <div class="lang-switch">
-      <button id="btn-de" class="active" onclick="setLang('de')">DE</button>
-      <button id="btn-fr" onclick="setLang('fr')">FR</button>
+      <select id="lang-select" onchange="setLang(this.value)">
+        <option value="de">Deutsch</option>
+        <option value="fr">Français</option>
+        <option value="en">English</option>
+        <option value="it">Italiano</option>
+        <option value="pt">Português</option>
+        <option value="es">Español</option>
+        <option value="sq">Shqip</option>
+        <option value="tr">Türkçe</option>
+        <option value="sh">Bosanski / Hrvatski / Srpski</option>
+      </select>
     </div>
-    <button class="btn-eltern" onclick="openModal()">
-      <span data-lang="de">Elternbereich</span><span data-lang="fr">Espace parents</span>
-    </button>
   </div>
 </header>
 
 <div class="page-header">
-  <h1><span data-lang="de">Unser Konzept</span><span data-lang="fr">Notre concept</span></h1>
+  <h1 data-i18n="konzept_title"></h1>
 </div>
 
 <main>
   <section>
+    <h2 data-i18n="konzept_einleitung_h"></h2>
+    <div class="card" style="max-width:700px;">
+      <p data-i18n="konzept_einleitung_p1"></p>
+      <br>
+      <p data-i18n="konzept_einleitung_p2"></p>
+      <br>
+      <p data-i18n="konzept_einleitung_p3"></p>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-i18n="konzept_grundsaetze_h"></h2>
+    <div class="card" style="max-width:700px;">
+      <p data-i18n="konzept_grundsaetze_p1"></p>
+      <ul>
+        <li data-i18n="konzept_grundsaetze_li1"></li>
+        <li data-i18n="konzept_grundsaetze_li2"></li>
+        <li data-i18n="konzept_grundsaetze_li3"></li>
+        <li data-i18n="konzept_grundsaetze_li4"></li>
+      </ul>
+      <br>
+      <p data-i18n="konzept_grundsaetze_p2"></p>
+      <br>
+      <p data-i18n="konzept_grundsaetze_p3"></p>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-i18n="konzept_haltung_h"></h2>
+    <div class="card" style="max-width:700px;">
+      <p data-i18n="konzept_haltung_p1"></p>
+      <br>
+      <p data-i18n="konzept_haltung_p2"></p>
+      <br>
+      <p data-i18n="konzept_haltung_p3"></p>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-i18n="konzept_alltag_h"></h2>
+    <div class="card" style="max-width:700px;">
+      <p data-i18n="konzept_alltag_p1"></p>
+      <ul>
+        <li data-i18n="konzept_alltag_li1"></li>
+        <li data-i18n="konzept_alltag_li2"></li>
+        <li data-i18n="konzept_alltag_li3"></li>
+        <li data-i18n="konzept_alltag_li4"></li>
+        <li data-i18n="konzept_alltag_li5"></li>
+      </ul>
+      <br>
+      <p data-i18n="konzept_alltag_p2"></p>
+      <br>
+      <p data-i18n="konzept_alltag_p3"></p>
+      <br>
+      <p data-i18n="konzept_alltag_p4"></p>
+      <ul>
+        <li data-i18n="konzept_alltag_li6"></li>
+        <li data-i18n="konzept_alltag_li7"></li>
+        <li data-i18n="konzept_alltag_li8"></li>
+        <li data-i18n="konzept_alltag_li9"></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-i18n="konzept_raeume_h"></h2>
+    <div class="card" style="max-width:700px;">
+      <p data-i18n="konzept_raeume_p1"></p>
+      <br>
+      <p data-i18n="konzept_raeume_p2"></p>
+    </div>
+    <div class="gallery">
+      <img src="Spielgruppe_von_aussen.jpg" data-i18n-alt="konzept_gallery_exterior_alt" onclick="openLightbox(this.src, this.alt)">
+      <img src="Innenraum_1.jpeg" data-i18n-alt="konzept_gallery_interior_alt" onclick="openLightbox(this.src, this.alt)">
+      <img src="Innenraum_2.jpeg" data-i18n-alt="konzept_gallery_interior_alt" onclick="openLightbox(this.src, this.alt)">
+      <img src="Innenraum_3.jpeg" data-i18n-alt="konzept_gallery_interior_alt" onclick="openLightbox(this.src, this.alt)">
+      <img src="Innenraum_4.jpeg" data-i18n-alt="konzept_gallery_interior_alt" onclick="openLightbox(this.src, this.alt)">
+      <img src="Innenraum_5.jpeg" data-i18n-alt="konzept_gallery_interior_alt" onclick="openLightbox(this.src, this.alt)">
+    </div>
+  </section>
+
+  <section>
+    <h2 data-i18n="konzept_eltern_h"></h2>
+    <div class="card" style="max-width:700px;">
+      <p data-i18n="konzept_eltern_p1"></p>
+      <ul>
+        <li data-i18n="konzept_eltern_li1"></li>
+        <li data-i18n="konzept_eltern_li2"></li>
+        <li data-i18n="konzept_eltern_li3"></li>
+        <li data-i18n="konzept_eltern_li4"></li>
+      </ul>
+      <br>
+      <p data-i18n="konzept_eltern_p2"></p>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-i18n="konzept_events_h"></h2>
     <div class="cards">
       <div class="card">
-        <h3 data-lang="de">Pädagogik</h3><h3 data-lang="fr">Pédagogie</h3>
-        <p data-lang="de">Wir begleiten jedes Kind individuell nach dem situationsorientierten Ansatz – mit viel Zeit für freies Spiel und Natur.</p>
-        <p data-lang="fr">Nous accompagnons chaque enfant selon une approche individuelle – avec beaucoup de temps pour le jeu libre et la nature.</p>
+        <h3 data-i18n="konzept_events_infoabend_h"></h3>
+        <p data-i18n="konzept_events_infoabend_p"></p>
       </div>
       <div class="card">
-        <h3 data-lang="de">Gruppen</h3><h3 data-lang="fr">Groupes</h3>
-        <p data-lang="de">Kleine, altersdurchmischte Gruppen mit fester Bezugsperson für jedes Kind.</p>
-        <p data-lang="fr">Petits groupes d'âges mixtes avec une personne de référence fixe pour chaque enfant.</p>
+        <h3 data-i18n="konzept_events_samichlaus_h"></h3>
+        <p data-i18n="konzept_events_samichlaus_p"></p>
       </div>
       <div class="card">
-        <h3 data-lang="de">Ernährung</h3><h3 data-lang="fr">Alimentation</h3>
-        <p data-lang="de">Frisch gekochte, ausgewogene Mahlzeiten – täglich zubereitet in unserer eigenen Küche.</p>
-        <p data-lang="fr">Repas frais et équilibrés – préparés chaque jour dans notre propre cuisine.</p>
-      </div>
-      <div class="card">
-        <h3 data-lang="de">Tagesablauf</h3><h3 data-lang="fr">Déroulement de la journée</h3>
-        <p data-lang="de">Feste Rituale für Ankommen, Mahlzeiten, Ruhezeiten und Spiel geben den Kindern Sicherheit.</p>
-        <p data-lang="fr">Des rituels fixes pour l'accueil, les repas, le repos et le jeu donnent aux enfants un cadre sécurisant.</p>
+        <h3 data-i18n="konzept_events_ostern_h"></h3>
+        <p data-i18n="konzept_events_ostern_p"></p>
       </div>
     </div>
   </section>
@@ -64,47 +164,36 @@
 <footer>
   <div class="footer-grid">
     <div>
-      <h3 data-lang="de">Spielgruppe Rägiräupli</h3><h3 data-lang="fr">Groupe de jeu Rägiräupli</h3>
-      <p data-lang="de">Watterstrasse 17, 8105 Regensdorf</p>
-      <p data-lang="fr">Watterstrasse 17, 8105 Regensdorf</p>
+      <h3 data-i18n="brand_name"></h3>
+      <p data-i18n="footer_address"></p>
     </div>
     <div>
-      <h3 data-lang="de">Rechtliches</h3><h3 data-lang="fr">Mentions légales</h3>
-      <p><a href="impressum.html" data-lang="de">Impressum</a><a href="impressum.html" data-lang="fr">Mentions légales</a></p>
-      <p><a href="datenschutz.html" data-lang="de">Datenschutzerklärung</a><a href="datenschutz.html" data-lang="fr">Déclaration de confidentialité</a></p>
-      <p><a href="vertragsbedingungen.html" data-lang="de">Vertragsbedingungen</a><a href="vertragsbedingungen.html" data-lang="fr">Conditions contractuelles</a></p>
+      <h3 data-i18n="footer_legal"></h3>
+      <p><a href="impressum.html" data-i18n="footer_impressum"></a></p>
+      <p><a href="datenschutz.html" data-i18n="footer_datenschutz"></a></p>
+      <p><a href="vertragsbedingungen.html" data-i18n="footer_vertrag"></a></p>
     </div>
     <div>
-      <h3 data-lang="de">Kontakt</h3><h3 data-lang="fr">Contact</h3>
-      <p data-lang="de">Telefon: 076 249 36 36<br>alessia.spielgruppe@outlook.ch</p>
-      <p data-lang="fr">Téléphone: 076 249 36 36<br>alessia.spielgruppe@outlook.ch</p>
+      <h3 data-i18n="footer_kontakt"></h3>
+      <p><span data-i18n="footer_telefon"></span>: 076 249 36 36<br>alessia.spielgruppe@outlook.com</p>
+      <div class="social-icons">
+        <a class="social-icon" href="https://www.facebook.com/elternclubRegensdorf/?locale=de_DE" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06C2 17.06 5.66 21.2 10.44 22v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.58v1.9h2.78l-.45 2.91h-2.33V22C18.34 21.2 22 17.06 22 12.06"/></svg>
+        </a>
+      </div>
     </div>
   </div>
-  <div class="copyright">© 2026 Spielgruppe Rägiräupli · <span data-lang="de">Alle Rechte vorbehalten</span><span data-lang="fr">Tous droits réservés</span></div>
+  <div class="copyright">© 2026 <span data-i18n="brand_name"></span> · <span data-i18n="footer_rechte"></span></div>
 </footer>
 
-<div class="modal-overlay" id="modal">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal()">&times;</button>
-    <h2><span data-lang="de">Elternbereich</span><span data-lang="fr">Espace parents</span><span class="badge-demo">DEMO</span></h2>
-    <form onsubmit="event.preventDefault(); alert('Demo-Login – im echten System folgt hier ein gesicherter Bereich mit Fotos und Dokumenten.');" style="box-shadow:none;padding:0;margin-top:1rem;">
-      <div>
-        <label>E-Mail</label>
-        <input type="email" required>
-      </div>
-      <div>
-        <label data-lang="de">Passwort</label><label data-lang="fr">Mot de passe</label>
-        <input type="password" required>
-      </div>
-      <button type="submit"><span data-lang="de">Anmelden</span><span data-lang="fr">Connexion</span></button>
-    </form>
-    <div class="modal-note">
-      <span data-lang="de">Hinweis: Dies ist ein reines Layout-Muster. Der echte Elternbereich benötigt ein Backend mit sicherem Login, verschlüsselter Dateiablage und Zugriff nur nach schriftlicher Foto-Einwilligung.</span>
-      <span data-lang="fr">Remarque : ceci est une maquette. L'espace parents réel nécessite un backend avec connexion sécurisée, stockage chiffré et accès uniquement après consentement écrit pour les photos.</span>
-    </div>
+<div class="modal-overlay" id="lightbox">
+  <div class="lightbox-content">
+    <button class="modal-close" onclick="closeLightbox()">&times;</button>
+    <img id="lightbox-img" src="" alt="">
   </div>
 </div>
 
+<script src="translations.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
