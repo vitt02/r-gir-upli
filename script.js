@@ -44,11 +44,36 @@ function setLang(lang){
   document.dispatchEvent(new CustomEvent('langchange', {detail: {lang: lang}}));
 }
 
-function openLightbox(src, alt){
+var galleryImages = [];
+var galleryIndex = 0;
+
+function showLightboxImage(){
+  var item = galleryImages[galleryIndex];
+  if(!item) return;
   var img = document.getElementById('lightbox-img');
-  img.src = src;
-  img.alt = alt || '';
+  img.src = item.src;
+  img.alt = item.alt || '';
+}
+
+function openLightbox(src, alt){
+  var imgs = document.querySelectorAll('.gallery img');
+  galleryImages = Array.prototype.map.call(imgs, function(img){
+    return {src: img.src, alt: img.alt};
+  });
+  galleryIndex = Array.prototype.findIndex.call(imgs, function(img){ return img.src === src; });
+  if(galleryIndex === -1) galleryIndex = 0;
+  showLightboxImage();
   document.getElementById('lightbox').classList.add('open');
+}
+function lightboxPrev(){
+  if(!galleryImages.length) return;
+  galleryIndex = (galleryIndex - 1 + galleryImages.length) % galleryImages.length;
+  showLightboxImage();
+}
+function lightboxNext(){
+  if(!galleryImages.length) return;
+  galleryIndex = (galleryIndex + 1) % galleryImages.length;
+  showLightboxImage();
 }
 function closeLightbox(){ document.getElementById('lightbox').classList.remove('open'); }
 
@@ -68,6 +93,16 @@ document.addEventListener('DOMContentLoaded', function(){
       if(e.target === this) overlay.classList.remove('open');
     });
   });
+
+  var lightbox = document.getElementById('lightbox');
+  if(lightbox){
+    document.addEventListener('keydown', function(e){
+      if(!lightbox.classList.contains('open')) return;
+      if(e.key === 'ArrowLeft') lightboxPrev();
+      else if(e.key === 'ArrowRight') lightboxNext();
+      else if(e.key === 'Escape') closeLightbox();
+    });
+  }
 
   var siteNav = document.getElementById('site-nav');
   var navToggle = document.querySelector('.nav-toggle');
