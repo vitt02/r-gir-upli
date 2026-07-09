@@ -6,7 +6,7 @@
   --text:#3a332c;
   --card:#ffffff;
   --radius:16px;
-  --rainbow:linear-gradient(90deg,#ff3a10,#ff8b00,#ffc400,#7ec93c,#00b8a0,#2d6df6,#8b3fd6,#ff3fb6);
+  --rainbow:linear-gradient(90deg,#ffc400,#7ec93c,#00b8a0,#2d6df6,#8b3fd6);
   --banner-gradient:linear-gradient(120deg,#ff5a3c 0%,#ff9d3c 14%,#ffd23c 28%,#8bd450 42%,#3cc9a8 56%,#3c8bde 70%,#8c5ce0 84%,#ff5cb8 100%);
   --t1:#e0503a;
   --t2:#d97f34;
