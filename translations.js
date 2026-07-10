@@ -170,6 +170,8 @@ de: {
   anmeldung_consent_html: "Mit der Unterzeichnung dieser Anmeldung akzeptiere ich die <a href=\"../vertragsbedingungen/\">Vertragsbedingungen</a> der Spielgruppe Rägiräupli sowie die <a href=\"../datenschutz/\">Datenschutzerklärung</a>.",
   anmeldung_submit: "Anfrage senden",
   anmeldung_demo_alert: "Demo-Formular – keine echte Übermittlung.",
+  anmeldung_success_alert: "Vielen Dank! Deine Anmeldung wurde übermittelt. Wir melden uns bei dir.",
+  anmeldung_error_alert: "Etwas ist schiefgelaufen. Bitte versuche es später erneut oder kontaktiere uns direkt.",
 
   kontakt_title_page: "Kontakt - Spielgruppe Rägiräupli",
   kontakt_title: "Kontakt & Anfahrt",
@@ -371,6 +373,8 @@ fr: {
   anmeldung_consent_html: "En signant cette inscription, j'accepte les <a href=\"../vertragsbedingungen/\">conditions contractuelles</a> du Groupe de jeu Rägiräupli ainsi que la <a href=\"../datenschutz/\">déclaration de confidentialité</a>.",
   anmeldung_submit: "Envoyer la demande",
   anmeldung_demo_alert: "Formulaire de démonstration – aucune transmission réelle.",
+  anmeldung_success_alert: "Merci ! Votre inscription a été envoyée. Nous vous recontacterons.",
+  anmeldung_error_alert: "Une erreur s'est produite. Veuillez réessayer plus tard ou nous contacter directement.",
 
   kontakt_title_page: "Contact - Groupe de jeu Rägiräupli",
   kontakt_title: "Contact & Accès",
@@ -572,6 +576,8 @@ en: {
   anmeldung_consent_html: "By signing this registration, I accept the <a href=\"../vertragsbedingungen/\">terms and conditions</a> of the Rägiräupli Playgroup as well as the <a href=\"../datenschutz/\">privacy policy</a>.",
   anmeldung_submit: "Send request",
   anmeldung_demo_alert: "Demo form – not actually submitted.",
+  anmeldung_success_alert: "Thank you! Your registration has been submitted. We will get back to you.",
+  anmeldung_error_alert: "Something went wrong. Please try again later or contact us directly.",
 
   kontakt_title_page: "Contact - Rägiräupli Playgroup",
   kontakt_title: "Contact & Directions",
@@ -773,6 +779,8 @@ it: {
   anmeldung_consent_html: "Firmando questa iscrizione, accetto le <a href=\"../vertragsbedingungen/\">condizioni contrattuali</a> del Gruppo di gioco Rägiräupli e l'<a href=\"../datenschutz/\">informativa sulla privacy</a>.",
   anmeldung_submit: "Invia richiesta",
   anmeldung_demo_alert: "Modulo dimostrativo – nessun invio reale.",
+  anmeldung_success_alert: "Grazie! La tua iscrizione è stata inviata. Ti contatteremo a breve.",
+  anmeldung_error_alert: "Si è verificato un errore. Riprova più tardi o contattaci direttamente.",
 
   kontakt_title_page: "Contatto - Gruppo di gioco Rägiräupli",
   kontakt_title: "Contatto & Indicazioni",
@@ -974,6 +982,8 @@ pt: {
   anmeldung_consent_html: "Ao assinar esta inscrição, aceito as <a href=\"../vertragsbedingungen/\">condições contratuais</a> do Grupo de Brincadeira Rägiräupli, bem como a <a href=\"../datenschutz/\">política de privacidade</a>.",
   anmeldung_submit: "Enviar pedido",
   anmeldung_demo_alert: "Formulário de demonstração – sem envio real.",
+  anmeldung_success_alert: "Obrigado! A sua inscrição foi enviada. Entraremos em contacto em breve.",
+  anmeldung_error_alert: "Ocorreu um erro. Tente novamente mais tarde ou contacte-nos diretamente.",
 
   kontakt_title_page: "Contacto - Grupo de Brincadeira Rägiräupli",
   kontakt_title: "Contacto & Acesso",
@@ -1175,6 +1185,8 @@ es: {
   anmeldung_consent_html: "Al firmar esta inscripción, acepto las <a href=\"../vertragsbedingungen/\">condiciones contractuales</a> del Grupo de Juego Rägiräupli, así como la <a href=\"../datenschutz/\">política de privacidad</a>.",
   anmeldung_submit: "Enviar solicitud",
   anmeldung_demo_alert: "Formulario de demostración – sin envío real.",
+  anmeldung_success_alert: "¡Gracias! Tu inscripción ha sido enviada. Nos pondremos en contacto contigo.",
+  anmeldung_error_alert: "Ha ocurrido un error. Inténtalo de nuevo más tarde o contáctanos directamente.",
 
   kontakt_title_page: "Contacto - Grupo de Juego Rägiräupli",
   kontakt_title: "Contacto y Ubicación",
@@ -1376,6 +1388,8 @@ sq: {
   anmeldung_consent_html: "Duke nënshkruar këtë regjistrim, unë pranoj <a href=\"../vertragsbedingungen/\">kushtet kontraktuale</a> të Grupit të Lojërave Rägiräupli, si dhe <a href=\"../datenschutz/\">politikën e privatësisë</a>.",
   anmeldung_submit: "Dërgo kërkesën",
   anmeldung_demo_alert: "Formular demonstrues – pa dërgim real.",
+  anmeldung_success_alert: "Faleminderit! Regjistrimi juaj u dërgua. Do t'ju kontaktojmë së shpejti.",
+  anmeldung_error_alert: "Diçka shkoi keq. Provo përsëri më vonë ose na kontakto direkt.",
 
   kontakt_title_page: "Kontakt - Grupi i Lojërave Rägiräupli",
   kontakt_title: "Kontakt & Udhëzime",
@@ -1577,6 +1591,8 @@ tr: {
   anmeldung_consent_html: "Bu kaydı imzalayarak, Rägiräupli Oyun Grubu'nun <a href=\"../vertragsbedingungen/\">sözleşme koşullarını</a> ve <a href=\"../datenschutz/\">gizlilik politikasını</a> kabul ediyorum.",
   anmeldung_submit: "Talebi gönder",
   anmeldung_demo_alert: "Demo formu – gerçek gönderim yapılmaz.",
+  anmeldung_success_alert: "Teşekkürler! Kaydınız gönderildi. Sizinle iletişime geçeceğiz.",
+  anmeldung_error_alert: "Bir şeyler ters gitti. Lütfen daha sonra tekrar deneyin veya bizimle doğrudan iletişime geçin.",
 
   kontakt_title_page: "İletişim - Rägiräupli Oyun Grubu",
   kontakt_title: "İletişim & Yol Tarifi",
@@ -1778,6 +1794,8 @@ sh: {
   anmeldung_consent_html: "Potpisivanjem ove prijave prihvatam <a href=\"../vertragsbedingungen/\">ugovorne uslove</a> Igraonice Rägiräupli, kao i <a href=\"../datenschutz/\">politiku privatnosti</a>.",
   anmeldung_submit: "Pošalji zahtjev",
   anmeldung_demo_alert: "Demo obrazac – bez stvarnog slanja.",
+  anmeldung_success_alert: "Hvala! Vaša prijava je poslana. Javit ćemo vam se uskoro.",
+  anmeldung_error_alert: "Nešto je pošlo po zlu. Pokušajte ponovno kasnije ili nas kontaktirajte direktno.",
 
   kontakt_title_page: "Kontakt - Igraonica Rägiräupli",
   kontakt_title: "Kontakt i lokacija",

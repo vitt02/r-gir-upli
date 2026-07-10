@@ -321,6 +321,48 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   }
 
+  // Where submitted registrations are sent: a Google Apps Script Web App
+  // (see APPS_SCRIPT_SETUP.md for the deployment steps). Left as a
+  // placeholder until Alessia deploys her own copy and the real URL is
+  // pasted in here.
+  var ANMELDUNG_ENDPOINT = 'PASTE_YOUR_DEPLOYED_WEB_APP_URL_HERE';
+
+  function fieldValue(id){
+    var el = document.getElementById(id);
+    return el ? el.value.trim() : '';
+  }
+
+  function collectFormData(){
+    var whoBrings = document.querySelector('input[name="who-brings"]:checked');
+    var days = [];
+    ['day-di', 'day-mi', 'day-do', 'day-fr'].forEach(function(id){
+      var el = document.getElementById(id);
+      if(el && el.checked) days.push(el.nextElementSibling ? el.nextElementSibling.textContent : id);
+    });
+    var freqSelect = document.getElementById('frequency');
+    return {
+      childName: fieldValue('child-name'),
+      birthdate: fieldValue('birthdate'),
+      nationality: fieldValue('nationality'),
+      motherTongue: fieldValue('mother-tongue'),
+      allergies: fieldValue('allergies'),
+      healthInfo: fieldValue('health-info'),
+      siblings: fieldValue('siblings'),
+      parentName: fieldValue('parent-name'),
+      street: fieldValue('street'),
+      plzOrt: fieldValue('plz-ort'),
+      whoBrings: whoBrings ? whoBrings.value : '',
+      whoBringsOther: fieldValue('who-brings-other'),
+      email: fieldValue('email'),
+      phone: fieldValue('phone'),
+      phoneMother: fieldValue('phone-mother'),
+      phoneFather: fieldValue('phone-father'),
+      frequency: freqSelect ? freqSelect.value : '',
+      days: days.join(', '),
+      lang: currentLang()
+    };
+  }
+
   // Full validation pass on submit
   form.addEventListener('submit', function(e){
     e.preventDefault();
@@ -348,6 +390,28 @@ document.addEventListener('DOMContentLoaded', function(){
     if(!checkWhoBringsOther()) valid = false;
 
     if(!valid) return;
-    alert(t('anmeldung_demo_alert'));
+
+    var submitBtn = form.querySelector('button[type="submit"]');
+    if(submitBtn) submitBtn.disabled = true;
+
+    // no-cors: Apps Script Web Apps don't send CORS headers back, so a normal
+    // fetch() would reject even on success. We don't need to read the
+    // response, only know the request went out.
+    fetch(ANMELDUNG_ENDPOINT, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {'Content-Type': 'text/plain;charset=utf-8'},
+      body: JSON.stringify(collectFormData())
+    })
+      .then(function(){
+        alert(t('anmeldung_success_alert'));
+        form.reset();
+      })
+      .catch(function(){
+        alert(t('anmeldung_error_alert'));
+      })
+      .finally(function(){
+        if(submitBtn) submitBtn.disabled = false;
+      });
   });
 })();
